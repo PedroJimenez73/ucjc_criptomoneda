@@ -1,0 +1,79 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 250;
+    display: none;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: 400ms all ease-in-out;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.overlay.show.visible {
+    display: block;
+    opacity: 1;
+}
+
+.modal {
+    margin-top: 2rem;
+    min-height: 200px;
+    min-width: 300px;
+    max-width: 540px;
+    position: fixed;
+    display: none;
+    opacity: 0;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 260;
+    transition: 500ms all ease-in-out;
+
+    .modal-header {
+        background-color: rgb(164, 163, 163);
+        padding: 0.5rem 1rem;
+        @include flex(flex-end, center);
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .modal-body {
+        background-color: white;
+        padding: 1rem 1rem 2rem;
+
+        h1 {
+            font-size: 1.5rem;
+            color: $brand-color;
+            font-family: $bold-font;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+    }
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.show.visible {
+    display: block;
+    opacity: 1;
+}
+
+.modal.jumbo {
+    height: calc(100vh - 8rem);
+    width: 80%;
+    max-width:720px;
+    background-color: white;
+}

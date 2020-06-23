@@ -1,0 +1,103 @@
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+#page-container {
+    margin-top: 80px;
+}
+
+.container {
+    animation: fadeIn 400ms 1;
+    padding: 1rem;
+    max-width: 1280px;
+    margin: 0 auto 100px;
+
+    h1 {
+        font-family: $bold-font;
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+        @include flex(flex-start, center);
+
+        span:first-child {
+            display: block;
+            background-color: $brand-color;
+            color: white;
+            padding: 0.5rem;
+            width: 2.7rem;
+            text-align: center;
+            margin-right: 1rem;
+        }
+    }
+
+    h2 {
+        font-family: $bold-font;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        @include flex(flex-start, center);
+
+        span:first-child {
+            display: block;
+            background-color: $brand-color;
+            color: white;
+            padding: 0.5rem;
+            width: 2.8rem;
+            text-align: center;
+            margin-right: 0.8rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+
+        .glosary {
+            color: $interactive;
+            transition: 400ms all ease-in-out;
+
+            &:after {
+                content: url('../img/icons/eye.svg');
+                position: relative;
+                top: 6px;
+                left: 5px;
+                margin-right: 8px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.row {
+    @include flex(flex-start, flex-start);
+}
+
+.w100 { width: 100%; }
+.w75 { width: 75%; }
+.w66 { width: 66%; }
+.w50 { width: 50%; }
+.w33 { width: 33%; }
+.w25 { width: 25%; }
+
+@media (max-width: 540px) {
+
+    .row {
+        @include flex-column(center, center);
+    }
+
+    .w100 { width: 100%; }
+    .w75 { width: 100%; }
+    .w66 { width: 100%; }
+    .w50 { width: 100%; }
+    .w33 { width: 100%; }
+    .w25 { width: 100%; }
+}

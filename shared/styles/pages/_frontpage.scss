@@ -1,0 +1,91 @@
+.frontpage {
+    @include flex(center, center);
+    position: relative;
+
+    .frontpage-image {
+        width: 100%;
+        height: calc(100vh - 140px);
+        background-image: url('../img/portada.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .frontpage-solid {
+        width: 0%;
+        height: calc(100vh - 140px);
+        background-color: $brand-color;
+    }
+
+    .frontpage-text {
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        background-color: rgba(255, 255, 255, 0.85);
+
+        hr {
+            border: none;
+            height: 0.5px;
+            background-color: white;
+            margin: 0 2rem;
+        }
+
+        p:nth-child(1) {
+            font-size: 1.2rem;
+            color: $brand-color;
+            font-family: $bold-font;
+            padding: 1.5rem 2.5rem 0.7rem;
+            text-transform: uppercase;
+        }
+
+        p:nth-child(3) {
+            font-size: 1.4rem;
+            font-family: $title-font;
+            color: $grey;
+            padding: 0.7rem 2.5rem;
+        }
+
+        p:nth-child(5) {
+            font-size: 1.8rem;
+            font-family: $title-font;
+            padding: 0.7rem 2.5rem;
+        }
+
+        p:nth-child(7) {
+            padding: 0.7rem 2.5rem;
+        }
+
+        p:nth-child(8) {
+            color: white;
+            background-color: $font-color;
+            font-size: 1.3rem;
+            font-family: $title-font;
+            padding: 0.7rem 2.5rem;
+        }
+
+
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .frontpage {
+        @include flex(center, center);
+        position: relative;
+
+        .frontpage-image {
+            width: 100%;
+        }
+
+        .frontpage-solid {
+            display: none;
+        }
+
+        .frontpage-text {
+            width: 90%;
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%);
+        }
+    }
+}

@@ -1,0 +1,103 @@
+/* Glosary */
+
+.glosario {
+  display: table;
+  width: 100%;
+}
+
+.lista_terminos {
+  list-style: none;
+  font-weight: bold;
+  margin: 0;
+  width: 35%;
+  display: table-cell;
+}
+.lista_terminos div {
+  background: $brand-color;
+  color: #FFF;
+  padding: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.lista_terminos div p {
+  cursor: pointer;
+  margin: 0 0 12px;
+}
+.lista_terminos div p:hover {
+  opacity: 0.7;
+}
+
+.contenedor_info {
+  display: table-cell;
+  padding: 0px 20px 20px 20px;
+}
+.contenedor_info div {
+  display: none;
+  top: -10px;
+  position: relative;
+}
+
+.info_termino {
+  padding-left: 25px;
+}
+
+.titulo_termino {
+  border-bottom: 1px solid $brand-color;
+  color: $brand-color;
+  font-weight: bold;
+}
+
+.glosario-small {
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .glosario {
+    display: none;
+  }
+
+  .glosario-small {
+    display: block;
+  }
+}
+.lista_terminos_small {
+  font-weight: bold;
+  margin: 0 0 200px 0;
+  background: $brand-color;
+  color: #FFF;
+  padding: 20px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+.lista_terminos_small a {
+  display: block;
+  cursor: pointer;
+  margin: 0 0 12px;
+  color: white;
+  text-decoration: none;
+}
+.lista_terminos_small a:hover {
+  opacity: 0.7;
+}
+
+.info_termino_small {
+  padding-left: 0px;
+}
+
+.titulo_termino_small {
+  margin-top: 20px;
+  border-bottom: 1px solid $brand-color;
+  color: $brand-color;
+  font-weight: bold;
+}
+
+.titulo_termino_arriba {
+  color: $brand-color;
+  float: right;
+  text-decoration: none;
+}
+
+.glosario_termino {
+  height: 1000px;
+}

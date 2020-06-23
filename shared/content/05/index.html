@@ -1,0 +1,52 @@
+<div id="page-container">
+    <div class="container">
+        <h1>Criptomonedas y Blockchain: Conceptos y aspectos jurídicos</h1>
+        <h3>Puesta en situación</h3>
+       <div class="actividades">
+            <p>¿Dónde se guardan los bitcoins?</p>
+            <hr>
+           <form>
+               <label>
+                   <input type="radio" name="question" value="a">
+                   ¿Uno va al banco con un USB y los ingresa en su cuenta?
+               </label>
+               <label>
+                   <input type="radio" name="question" value="b">
+                   ¿Se quedan en el disco duro esperando a ser cambiados?
+               </label>
+               <label>
+                   <input type="radio" name="question" value="c">
+                   ¿O se guardan en monederos?
+               </label>
+               <div class="buttons">
+                   <button type="button" onclick="getAnswer()">Comprobar</button>
+               </div>
+           </form>
+           <div class="feedback">
+               <div class="feed">
+                    Incorrecto. Ningún banco en España acepta <i>bitcoins</i> para ingresarlos en las cuentas.
+               </div>
+               <div class="feed">
+                    Incorrecto. Nadie se arriesga a dejarla en el disco duro o en una memoria USB esperando a que un habilidoso <i>hacker</i> se la lleve. Por ejemplo, Corea del Norte tiene una división de <i>hackers</i> que solo se dedica a intentar robar <i>bitcoins</i> ajenos.
+               </div>
+               <div class="feed correct">
+                   Correcto. La popularización de las criptomonedas ha hecho que las empresas de tecnología diseñen unos monederos especiales para almacenarlas con total seguridad. Se trata de una especie de dispositivos USB especiales que traen medidas de seguridad extraordinarias. Estos gadgets no guardan los <i>bitcoins</i> en sí, sino las claves privadas que dan autorización a realizar operaciones sobre las direcciones <i>bitcoin</i> a las que se asocian. 
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+<script>
+    var inputs = document.querySelectorAll('input');
+    var feeds = document.querySelectorAll('.feed');
+    var correctAnswer = 'c';
+
+    function getAnswer() {
+        for(i = 0; i < inputs.length; i++) {
+            feeds[i].style.display = 'none';
+            if(inputs[i].checked) {
+                feeds[i].style.display = 'block';
+            }
+        }
+    }
+</script>

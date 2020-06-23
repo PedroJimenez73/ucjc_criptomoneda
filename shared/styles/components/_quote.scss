@@ -1,0 +1,85 @@
+div.cita {
+	border: 4px solid #989898;
+	align-items: flex-start;
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+div.cita p:nth-child(1) {
+  position: absolute;
+  top: -35px;
+  left: 5px;
+  padding: 0 10px !important;
+  background-color: white;
+}
+
+div.cita p.quote {
+  font-family: 'MontserratItalic', Arial, sans-serif;
+}
+
+div.cita p.icon {
+  position: absolute;
+  bottom: -55px;
+  right: -10px;
+  padding: 20px 10px !important;
+  background-color: white;
+}
+
+div.cita p:nth-child(1) img,
+div.cita p.icon img {
+  width: 32px;
+  height: 32px;
+}
+
+div.cita .autor {
+    text-align: right;
+}
+
+div.cita .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        margin: 20px;
+    }
+
+}
+
+div.cita.book .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // a {
+    //     color: rgba(255, 255, 255, 0.8);
+
+    //     &:hover {
+    //         color: white;
+    //     }
+    // }
+
+}
+
+@media (max-width: 540px) {
+    div.cita div.links {
+        flex-direction: column;
+    }   
+}
+
+.super-text {
+    margin: 1.5rem 0;
+    background-color: $brand-color;
+    padding: 1.5rem;
+
+    p {
+        color: white;
+
+        b {
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+}

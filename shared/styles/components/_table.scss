@@ -1,0 +1,90 @@
+// Vertical tabs
+
+.tab {
+    display: flex;
+    box-shadow: $shadow;
+    max-width: 1080;
+    margin: 0 auto;
+    transition: 400ms all ease-in;
+
+    .tabs{
+        width: 25%;
+
+        div {
+            cursor: pointer;
+            border-bottom: 1px solid #d8d8d8;
+            border-right: 1px solid #d8d8d8;
+            @include flex(center, center);
+            padding: 5px 10px;
+            font-weight: bold;
+            transition: 400ms all ease-in;
+
+            &.check {
+                color: white;
+                background-color: $brand-color;
+                border: 1px solid $brand-color;
+            }
+
+            &:hover {
+                color: white;
+                background: $grey;
+                border: 1px solid $grey;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            p {
+                font-size: 1.3rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .content-tabs {
+        width: 70%;
+        position: relative;
+        padding: 20px;
+
+        div {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            padding: 1rem;
+            background-color: white;
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+
+            &.show {
+                display: block;
+            }
+
+            &.visible {
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 440px) {
+    .tab{
+        flex-direction: column;
+
+        .tabs {
+            width: 100%;
+        }
+
+        .content-tabs {
+            width: 100%;
+            position: relative;
+
+            div {
+                width: 100%;
+                box-shadow: $shadow;
+            }
+        }
+    }
+}

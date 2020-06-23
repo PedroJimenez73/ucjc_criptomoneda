@@ -1,0 +1,99 @@
+<div id="page-container">
+    <div class="container">
+	    <h1>
+            Presentación
+        </h1>
+        <div id="back-slide">
+            <button id="btn-slide-back" onclick="navBackSlide()">&lt;</button>
+            <div class="slide" style="left: 0">
+                <p>
+                    Los <b>objetivos</b> de esta sesión online son los siguientes: 
+                </p>
+                <ul>
+                    <li>Caracterizar el concepto de <i>Blockchain</i>: Características y funcionalidades.</li>
+                    <li>Caracterizar el concepto de criptomoneda.</li>
+                    <li>Analizar las cuestiones jurídicas más relevantes de las criptomonedas.</li>
+                </ul>
+            </div>
+            <div class="slide"> 
+                <p>
+                    ¿Cuál será la <b>estructura</b> de esta sesión? Se compone de dos bloques en los que encontramos también dos actividades a realizar por los alumnos.
+                </p>
+                <ol>
+                    <li><b>¿Qué es <i>Blockchain</i>?</b> En este primer bloque de contenidos se caracterizará el concepto para poder entenderlo y se recomendará una lectura como actividad.</li>
+                    <li><b>La criptomoneda como bien económico. Concepto y análisis jurídico</b>. En el segundo bloque se abordarán estas cuestiones y se realizará un caso práctico para poder asimilar mejor los contenidos.</li>
+                </ol>
+            </div>
+            <button id="btn-slide-next" onclick="navNextSlide()">&gt;</button>
+        </div>
+    </div>
+</div>
+<script>
+    /* Slide */
+    var countSlide = 1;
+    var btnSlideBack = document.getElementById('btn-slide-back');
+    btnSlideBack.style.opacity = 0;
+    btnSlideBack.style.pointerEvents = 'none';
+    var btnSlideNext = document.getElementById('btn-slide-next');
+    var backSlide = document.getElementById('back-slide');
+    var slides = document.querySelectorAll('.slide');
+    // var topHeightSlide = 0;
+
+    // function calcHeight () {
+    //     setTimeout(function(){
+    //         slides.forEach(el => {
+    //         console.log(el.offsetHeight);
+    //             if (el.offsetHeight > topHeightSlide) {
+    //                 topHeightSlide = el.offsetHeight;
+    //             }
+    //         });
+    //         slides.forEach(el => {
+    //             el.style.height = topHeightSlide + "px";
+    //         });
+    
+    //         backSlide.style.height = (topHeightSlide + 40) + "px";
+    //     },100)
+    // }
+
+    // window.onload = calcHeight();
+
+    setTimeout(function(){
+        var alturaB = backSlide.scrollHeight;
+        for (i = 0; i <slides.length; i++){
+            slides[i].style.height = (alturaB - 40) + "px";
+        }
+        backSlide.style.height = alturaB + 40 + "px";
+        backSlide.style.opacity = 1;
+    },500)
+
+    function navNextSlide() {
+        $('.slide:nth-child('+(countSlide+1)+')').animate({left:'-2000px','opacity':'0'},500);
+        countSlide++;
+        $('.slide:nth-child('+(countSlide+1)+')').animate({left:'0','opacity':'1'},700);
+        updateSlideBtn ();
+    }
+
+    function navBackSlide() {
+        $('.slide:nth-child('+(countSlide+1)+')').animate({left:'2000px','opacity':'0'},500);
+        countSlide--;
+        $('.slide:nth-child('+(countSlide+1)+')').animate({left:'0','opacity':'1'},700);
+        updateSlideBtn ();
+    }
+
+    function updateSlideBtn () {
+        if (countSlide === 1) {
+            btnSlideBack.style.opacity = 0;
+            btnSlideBack.style.pointerEvents = 'none';
+        } else {
+            btnSlideBack.style.opacity = 1;
+            btnSlideBack.style.pointerEvents = 'auto';
+        }
+        if (countSlide === slides.length ) {
+            btnSlideNext.style.opacity = 0;
+            btnSlideNext.style.pointerEvents = 'none';
+        } else {
+            btnSlideNext.style.opacity = 1;
+            btnSlideNext.style.pointerEvents = 'auto';
+        }
+    }
+</script>

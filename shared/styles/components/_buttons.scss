@@ -1,0 +1,18 @@
+.buttons {
+    @include flex(flex-end, center);
+}
+
+button {
+    border: 1px solid $font-color;
+    background-color: $font-color;
+    color: white;
+    font-family: $main-font;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: 400ms all ease-in-out;
+
+    &:hover {
+        background-color: white;
+        color: $font-color;
+    }
+}

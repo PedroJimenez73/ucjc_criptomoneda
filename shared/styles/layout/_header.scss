@@ -1,0 +1,144 @@
+header {
+    height: 80px;
+    @include flex(space-between, center);
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: white;
+    
+    #title {
+        margin-left: 100px;
+
+        h2 {
+            color: $brand-color;
+            font-family: $bold-font;
+            font-size: 1rem;
+        }
+
+        h1 {
+            color: $font-color;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+    }
+
+    img {
+        height: 60px;
+    }
+}
+
+@media (max-width: 860px) {
+    header {
+        @include flex(flex-end, center);
+
+        #title {
+            display: none;
+        }
+
+        img {
+            height: 40px;
+        }
+
+    }
+}
+
+@media (max-width: 540px) {
+    header {
+        height: 80px;
+        padding: 0 0.5rem;
+
+        img {
+            height: 30px;
+        }
+
+    }
+}
+
+@keyframes delayed {
+    100% { 
+        opacity: 0;
+    }
+}
+
+@keyframes delayed-2 {
+    100% { 
+        width: 37px;
+        opacity: 1;
+        top: 15px;
+        left: -2.5px;
+    }
+}
+
+
+#burger {
+    position: fixed;
+    top: 25px;
+    left: 20px;
+    z-index: 110;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+
+    > div {
+        @include flex(row, center);
+
+        .dot, 
+        .center-dot {
+            margin: 3px;
+            height: 5px;
+            width: 5px;
+            background-color: $accent-brand-color;
+            transition: 700ms all ease-in-out;
+        }
+    }
+
+    .fr-x {
+        position: absolute;
+        top: 17.5px;
+        left: 17.5px;
+        width: 0;
+        height: 2px;
+        opacity: 0;
+        background-color: white;
+        transform: rotate(45deg);
+    }
+
+    .sc-x {
+        position: absolute;
+        top: 17.5px;
+        left: 17.5px;
+        width: 0;
+        height: 2px;
+        opacity: 0;
+        background-color: white;
+        transform: rotate(-45deg);
+    }
+
+    &.open {
+
+        .dot {
+            opacity: 0;
+        }
+
+        .center-dot {
+            animation-name: delayed;
+            animation-duration: 600ms;
+            animation-delay: 700ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .fr-x, .sc-x {
+            animation-name: delayed-2;
+            animation-duration: 700ms;
+            animation-delay: 700ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+    }
+
+}

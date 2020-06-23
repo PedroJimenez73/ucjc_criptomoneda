@@ -1,0 +1,77 @@
+.timeline {
+
+    article {
+        min-height: 300px;
+        @include flex(flex-start, stretch);
+
+        .item {
+            width: 25%;
+            @include flex-column(center, center);
+            background-image: url('../img/linea-gris.png');
+            background-position: center center;
+            background-size: 2% 100%;
+            background-repeat: no-repeat;
+
+            .pic {
+                width: 80%;
+                height: 200px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flex(center, center);
+                font-size: 2rem;
+                font-family: $bold-font;
+                color: $brand-color;
+                transition: 400ms all ease-in-out;
+
+                &:hover {
+                    box-shadow: $mega-shadow;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &:first-child .item {
+            background-position: center bottom;
+            background-size: 2% 50%;
+        }
+
+        &:last-child .item {
+            background-position: center top;
+            background-size: 2% 50%;
+        }
+
+        .content {
+            width: 75%;
+            opacity: 0;
+            transition: 400ms all ease-in-out;
+            @include flex-column(center, flex-start);
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .timeline {
+
+        article {
+            margin-top: 2rem;
+            min-height: 300px;
+            @include flex-column(center, center);
+
+            .item {
+                width: 100%;
+                background-image: none;
+            }
+
+            .content {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}

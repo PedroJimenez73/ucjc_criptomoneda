@@ -1,0 +1,198 @@
+/* CSS Scormy */
+/* By Pedro Jiménez */
+/* 2020 */
+
+@import 'abstracts/animations';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/accordion';
+@import 'components/buttons';
+@import 'components/questions';
+// @import 'components/charts';
+@import 'components/flip';
+@import 'components/media';
+// @import 'components/messages';
+@import 'components/modal';
+@import 'components/slide';
+@import 'components/quote';
+// @import 'components/spinner';
+@import 'components/table';
+@import 'components/timeline';
+
+@import 'layout/footer';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/sidenav';
+
+@import 'pages/frontpage';
+@import 'pages/glosary';
+@import 'pages/initial';
+
+html {
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    font-size: 100%;
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: 110%; 
+    }
+}
+
+@media (max-width: 440px) {
+    html {
+        font-size: 90%; 
+    }
+}
+
+body {
+    font-family: $main-font;
+    color: $font-color;
+}
+
+h1 {
+    color: $brand-color;
+    font-family: $bold-font;
+}
+
+h2 {
+    color: $brand-color;
+    font-family: $bold-font;
+}
+
+h3 {
+    color: $font-color;
+    font-family: $bold-font;
+}
+
+b {
+    font-weight: 900;
+    font-family: $bold-main-font;
+}
+
+a {
+    font-size: 1.2rem;
+    transition: 400ms ease-in-out all;
+    color: $brand-color;
+    word-break: break-all;
+
+    &:hover {
+        color: $accent-brand-color;
+    }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(0,0,0, 0.2);
+}
+
+img {
+    max-width: 100%;
+
+    &.map {
+        display: block;
+        max-width: 840px;
+        margin: 0 auto;
+    }
+}
+
+// Lists
+
+ul {
+    list-style: none;
+    margin-left: 40px;
+
+    li {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px 0;
+        position: relative;
+
+        &:first-child {
+            margin: 0 0 20px;
+        }
+
+        &:last-child {
+            margin: 20px 0 0;
+        }
+
+        &::before {
+          content: "•";
+          color: $brand-color;
+          font-weight: bold;
+          font-size: 2.5em;
+          position: absolute;
+          width: 80px;
+          top: -25px;
+          left: -25px;
+        }
+
+        ul {
+
+            li {
+                font-size: 1em;
+                line-height: 1.3;
+                margin: 15px 0;
+                position: relative;
+
+                &::before {
+                    content: "•";
+                    color: $brand-color;
+                    font-weight: bold;
+                    font-size: 2em;
+                    position: absolute;
+                    width: 40px;
+                    top: -15px;
+                    left: -20px;
+                }
+            }
+
+        }
+
+    }
+  
+}
+
+ol {
+    list-style: none;
+    margin-left: 60px;
+    counter-reset: li;
+
+    li {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px 0;
+        position: relative;
+        list-style-position: inside;
+
+        &::before {
+            counter-increment:li;
+            content: counter(li);
+            //font-family: "Verdana", Arial, Helvetica, sans-serif;
+            background: $brand-color;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.8em;
+            text-align: right;
+            position: absolute;
+            padding: 4px 8px;
+            top: -3px;
+            left: -40px;
+            min-width: 27px;
+            margin-right: 10px;
+        }
+
+    }
+  
+}

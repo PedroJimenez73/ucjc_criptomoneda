@@ -1,0 +1,44 @@
+.pic-float {
+    position: relative;
+
+    &.right {
+        float: right;
+        margin: 0 0 1rem 1rem;
+    }
+
+    &.left {
+        float: left;
+        margin: 0 1rem 1rem 0;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .foot {
+        margin: 0;
+        width: 80%;
+        background-color: $brand-color;
+        color: white;
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        position: absolute;
+        bottom: -5%;
+        left: 10%;
+    }
+
+}
+
+@media (max-width: 540px) {
+    .pic-float {
+
+        &.right {
+            margin: 0 0 1.5rem;
+        }
+
+        &.left {
+            margin: 0 0 1.5rem;
+        }
+    }
+}

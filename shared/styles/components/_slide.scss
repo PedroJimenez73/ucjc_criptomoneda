@@ -1,0 +1,112 @@
+/* Slides */
+
+#back-slide {
+    background-image: url("../img/presentacion.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 50px 25px;
+    opacity: 0;
+    transition: opacity 700ms ease;
+    overflow: hidden;
+}
+
+#back-slide .slide {
+  background: rgba(255, 255, 255, 0.9);
+  display: inline;
+  margin: 45px 25px;
+  padding: 10px 45px;
+  width: calc(100% - 50px);
+  /* height: calc(100vh - 390px); */
+  position: absolute;
+  top: 0;
+  left: 2000px;
+}
+
+/* @media (max-width: 720px) {
+  #back-slide {
+    height: 100vh;
+  }
+  
+  #back-slide .slide {
+    height: 100vh;
+  }
+} */
+
+#back-slide button {
+  border: none;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 22px;
+  height: 70px;
+  z-index: 30;
+  cursor: pointer;
+  background: $font-color;
+  transition: 400ms all ease-in-out;
+}
+
+#back-slide button:hover {
+    background: $brand-color;
+}
+
+#back-slide #btn-slide-back {
+  position: absolute;
+  top: 35%;
+  left: 15px;
+}
+
+#back-slide #btn-slide-next {
+  position: absolute;
+  top: 35%;
+  right: 15px;
+}
+
+.auto-slider {
+
+    width: 100%;
+    padding: 1rem;
+
+    .slide {
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: all 300ms ease-in-out;
+        }
+
+        img.active {
+            opacity: 1;
+        }
+
+        .arrows {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            @include flex(flex-start, center);
+
+            .arrow {
+                background-color: $font-color;
+                color: white;
+                padding: 1rem;
+                transition: all 400ms ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $brand-color;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .auto-slider {
+        margin-bottom: 260px;
+    }
+
+}

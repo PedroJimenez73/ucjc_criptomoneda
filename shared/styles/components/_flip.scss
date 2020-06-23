@@ -1,0 +1,156 @@
+/* Flip cards */
+
+p.instructions {
+    color: $interactive;
+    font-style: italic;
+    font-size: 1rem !important;
+    text-align: center;
+}
+
+.flexy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flip-card {
+  position: relative;
+  margin: 20px;
+  width: 500px;
+  height: 400px;
+  transform-style: preserve-3d;
+  /* perspective: 1000; */
+  transition: 2s;
+  cursor: pointer;
+}
+
+.flip-card.turn {
+  transform: rotatey(180deg);
+}
+
+.front-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c2c2c2;
+  color: white;
+  transform: rotateY(0deg);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.front-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.back-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+  color: #404040;
+  font-size: 16px;
+  padding: 15px;
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow-y: auto;
+
+  p {
+      font-size: 1rem !important;
+  }
+}
+
+p.orange-text {
+  background-color: $brand-color;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: ease-in-out 300ms all;
+  margin: 0 !important;
+}
+
+.flip-card:hover p.orange-text {
+  background-color: $accent-brand-color;
+}
+
+.ie-card {
+  position: relative;
+  margin: 20px;
+  width: 500px;
+  height: 350px;
+  transition: 2s;
+  cursor: pointer;
+}
+
+.ie-front-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c2c2c2;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity 700ms ease;
+  -moz-transition: opacity 700ms ease;
+  -o-transition: opacity 700ms ease;
+  transition: opacity 700ms ease;
+}
+
+.ie-front-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ie-back-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+  color: #404040;
+  font-size: 16px;
+  padding: 15px;
+  overflow-y: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 700ms ease;
+  -moz-transition: opacity 700ms ease;
+  -o-transition: opacity 700ms ease;
+  transition: opacity 700ms ease;
+}
+
+.ie-card.show .ie-front-card {
+  opacity: 0;
+}
+
+.ie-card.show .ie-back-card {
+  opacity: 1;
+}
+
+@media (max-width: 540px) {
+    .flip-card {
+        position: relative;
+        margin: 20px;
+        width: 500px;
+        height: 500px;
+    }
+}
