@@ -4,18 +4,30 @@ var pages = [
     { title: "Mapa Conceptual", path: "03", show: "yes"},
     { title: "Criptomonedas y Blockchain: Conceptos y aspectos jurídicos", path: "04", show: "yes"},
     { title: "", path: "05", show: "no"},
-    { title: "1. ¿Qué es el blockchain?", path: "06", show: "yes"},
-    { title: "", path: "07", show: "no"},
-    { title: "2. La criptomoneda como bien económico: concepto y análisis jurídico", path: "08", show: "yes"},
+    { title: "", path: "06", show: "no"},
+    { title: "1. ¿Qué es el blockchain?", path: "07", show: "yes"},
+    { title: "", path: "08", show: "no"},
     { title: "", path: "09", show: "no"},
     { title: "", path: "10", show: "no"},
     { title: "", path: "11", show: "no"},
     { title: "", path: "12", show: "no"},
     { title: "", path: "13", show: "no"},
     { title: "", path: "14", show: "no"},
-    { title: "Glosario", path: "15", show: "yes"},
-    { title: "Bibliografía", path: "16", show: "yes"},
-    { title: "Enlaces de interés", path: "17", show: "yes"},
+    { title: "", path: "15", show: "no"},
+    { title: "", path: "16", show: "no"},
+    { title: "", path: "17", show: "no"},
+    { title: "", path: "18", show: "no"},
+    { title: "2. La criptomoneda como bien económico: concepto y análisis jurídico", path: "19", show: "yes"},
+    { title: "", path: "20", show: "no"},
+    { title: "", path: "21", show: "no"},
+    { title: "", path: "22", show: "no"},
+    { title: "", path: "23", show: "no"},
+    { title: "", path: "24", show: "no"},
+    { title: "", path: "25", show: "no"},
+    { title: "Glosario", path: "26", show: "yes"},
+    { title: "Bibliografía", path: "27", show: "yes"},
+    { title: "Enlaces de interés", path: "28", show: "yes"},
+    { title: "Créditos", path: "29", show: "yes"},
 ]
 
 var menuItems = document.getElementById('menu-items');
@@ -150,4 +162,3 @@ function toggleAccordion(e) {
         }
     }
 }
-

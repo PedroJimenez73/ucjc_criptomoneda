@@ -42,3 +42,15 @@
         }
     }
 }
+
+video {
+    width: 100%;
+    max-width: 720px;
+    display: block;
+    margin: 2rem auto;
+}
+
+iframe {
+    display: block;
+    margin: 2rem auto;
+}

@@ -25,6 +25,10 @@ p.instructions {
   cursor: pointer;
 }
 
+.flip-card.super {
+    height: 700px;
+}
+
 .flip-card.turn {
   transform: rotatey(180deg);
 }
@@ -99,6 +103,10 @@ p.orange-text {
   cursor: pointer;
 }
 
+.ie-card.super {
+    height: 800px;
+}
+
 .ie-front-card {
   position: absolute;
   top: 0;
@@ -151,6 +159,27 @@ p.orange-text {
         position: relative;
         margin: 20px;
         width: 500px;
-        height: 500px;
+        height: 900px;
     }
+
+    .ie-card {
+        position: relative;
+        margin: 20px;
+        width: 500px;
+        height: 900px;
+    }
+    .flip-card.super {
+        position: relative;
+        margin: 20px;
+        width: 500px;
+        height: 900px;
+    }
+
+    .ie-card.super {
+        position: relative;
+        margin: 20px;
+        width: 500px;
+        height: 900px;
+    }
+
 }

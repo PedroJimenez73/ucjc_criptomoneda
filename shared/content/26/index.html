@@ -1,0 +1,81 @@
+<div id="page-container">
+    <div class="container" id="top">
+	    <h1>
+            Glosario
+        </h1>
+        <p class="instructions">Pulse sobre los términos para ampliar la información.</p>
+        <div class="glosario" >
+            <div class="lista_terminos">
+                <div id="menu-glosario" style="min-height: 425px;">
+                    
+                </div>
+            </div>
+            <div id="contenedores" class="contenedor_info"></div>
+        </div>
+        <div class="glosario-small">
+            <div id="mini-menu-glosario" class="lista_terminos_small" style="min-height: 300px;">
+            </div>
+            <div id="contenedores-mini">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var terminos = 
+    [
+        '<i>Bitcoin</i>',
+        '<i>Blockchain</i>',
+        'Criptomoneda'
+    ];
+    var definiciones = 
+    [
+        'Criptomoneda que puede utilizarse para intercambiar bienes y servicios y cuyo valor depende de su demanda. El <i>Bitcoin</i> de símbolo ฿ y abreviatura BTC o XBT, es activo de natruraleza criptográfica que puede almacenarse en formato digital o físico, suele utilizarse como medio de intercambio en sistemas <i>Blockchain</i>',
+        'Cadena de bloques traducido literalmente, es una tecnología asimilable a una base de datos o libro de registros (los bloques) están enlazados y cifrados para proteger la seguridad y privacidad de las transacciones. Sus características esenciales son que se basa en un sistema de red distribuida per to per y que fundamenta su funcionamiento en la encriptación de las operaciones que aloja.',
+        'La criptomoneda o criptodivisa es un tipo de activo económico que utiliza la criptografía para proporcionar un sistema de pagos seguro. Estas técnicas de cifrado sirven para regular la generación de unidades monetarias y verificar la transferencia de fondos mediante las denominadas operaciones de minado y pre-minado.',
+    ];
+    var menuGlosario = document.getElementById('menu-glosario');
+    var contenedores = document.getElementById('contenedores');
+    var minimenuGlosario = document.getElementById('mini-menu-glosario');
+    var contenedoresMini = document.getElementById('contenedores-mini');
+    var contenidomenuGlosario = '';
+    var contenidoCont = '';
+    var contenidoMinimenuGlosario = '';
+    var contenidoContMini = '';
+    for (i=0; i < terminos.length; i++){
+        contenidomenuGlosario += '<p onclick="glosario('+ i + ')">'+ terminos[i] + '</p>';
+        contenidoCont += '<div id="cont' + i + '"><p class="titulo_termino">' + terminos[i] + '</p><p class="info_termino">'+ definiciones[i] + '</p></div>';
+        contenidoMinimenuGlosario +=  '<a href="#cont' + (i+terminos.length) +'">' + terminos[i] + '</a>';
+        contenidoContMini +=  '<span id="cont' + (i+terminos.length) +'" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span><div class="glosario_termino"><p class="titulo_termino_small">' + terminos[i] + '<a href="#top" class="titulo_termino_arriba">volver al índice</a></p><p class="info_termino_small">' + definiciones[i] + '</p></div>';
+    }
+    menuGlosario.innerHTML = contenidomenuGlosario;
+    contenedores.innerHTML = contenidoCont;
+    minimenuGlosario.innerHTML = contenidoMinimenuGlosario;
+    contenedoresMini.innerHTML = contenidoContMini;
+    
+    $("a").on("click",function(){
+        if(this.hash !== ""){
+            var hash = this.hash;
+            $("html, body").animate({
+                scrollTop: $(hash).offset().top
+            }, 800);
+        }
+    });
+    
+    function glosario(j){
+        id2='#cont'+j;
+        $(".contenedor_info div").fadeOut(0);
+        $(id2).fadeIn(0);
+    }
+</script>
+<script>
+/* Smooth vertical */
+$("a").on("click",function(){
+    if(this.hash !== ""){
+        var hash = this.hash;
+        $("html, body").animate({
+            scrollTop: $(hash).offset().top
+        }, 800);
+    }
+});
+</script>

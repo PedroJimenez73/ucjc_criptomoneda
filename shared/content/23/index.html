@@ -1,0 +1,100 @@
+<div id="page-container">
+    <div class="container">
+        <p><b>Piensa bien en las dos preguntas antes de hacer clic en las imágenes y ver la respuesta.</b></p>
+        <p class="instructions">Pulse sobre las imágenes para ampliar la información.</p>
+        <div id="flexy-not-ie" class="flexy">
+            <div class="flip-card" onclick="flip(1)">
+                <div class="front-card">
+                    <img src="img/Cripto_6.jpg">
+                    <p class="orange-text">
+                        ¿Cuál sería un buen ejemplo de dinero electrónico?
+                    </p>
+                </div>
+                <div class="back-card">
+                    <p>
+                        Como ejemplo podría servir una tarjeta regalo de unos determinados almacenes comerciales que representa el valor (en moneda de curso legal) cuyo titular puede reclamar a ese almacén comercial  para la adquisición de aquellos productos o servicios que estime conveniente. Es decir, <b>hay un derecho de crédito contra el emisor </b> (el almacén comercial) por el importe consignado en la tarjeta.
+                    </p>
+                </div>
+            </div>                               
+            <div class="flip-card" onclick="flip(2)">
+                <div class="front-card">
+                    <img src="img/Cripto_7.png">
+                    <p class="orange-text">
+                        ¿Son las criptomonedas dinero electrónico?
+                    </p>
+                </div >
+                <div class="back-card">
+                    <p>
+                        <b>En el caso de las criptomonedas no hay un emisor como tal contra el que exista un crédito</b>, por lo cual no cabe su consideración tampoco como dinero electrónico.
+                    </p>
+                    <p>Precisamente la falta de un emisor como tal contra el que poder ejercer un determinado derecho de crédito es el que impide también su consideración como título-valor, tal y como sería el caso de una acción en una Sociedad Anónima o de una participación en una Sociedad Limitada.</p>
+                </div>
+            </div>
+        </div>
+        <div id="flexy-ie" class="flexy">
+            <div class="ie-card" onclick="flipIE(1)">
+                <div class="ie-front-card">
+                    <img src="img/Cripto_6.jpg">
+                    <p class="orange-text">
+                        ¿Cuál sería un buen ejemplo de dinero electrónico?
+                    </p>
+                </div>
+                <div class="ie-back-card">
+                    <p>
+                        Como ejemplo podría servir una tarjeta regalo de unos determinados almacenes comerciales que representa el valor (en moneda de curso legal) cuyo titular puede reclamar a ese almacén comercial  para la adquisición de aquellos productos o servicios que estime conveniente. Es decir, <b>hay un derecho de crédito contra el emisor </b> (el almacén comercial) por el importe consignado en la tarjeta.
+                    </p>             
+                </div>
+            </div>
+            <div class="ie-card" onclick="flipIE(2)">
+                <div class="ie-front-card">
+                    <img src="img/Cripto_7.png">
+                    <p class="orange-text">
+                        ¿Son las criptomonedas dinero electrónico?
+                    </p>
+                </div>
+                <div class="ie-back-card">
+                    <p>
+                        <b>En el caso de las criptomonedas no hay un emisor como tal contra el que exista un crédito</b>, por lo cual no cabe su consideración tampoco como dinero electrónico.
+                    </p>
+                    <p>Precisamente la falta de un emisor como tal contra el que poder ejercer un determinado derecho de crédito es el que impide también su consideración como título-valor, tal y como sería el caso de una acción en una Sociedad Anónima o de una participación en una Sociedad Limitada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Opera 8.0+
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+    // Firefox 1.0+
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+
+    // Safari 3.0+ "[object HTMLElementConstructor]" 
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+
+    // Chrome 1+
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+    // Blink engine detection
+    var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+    if (isIE) {
+        document.getElementById('flexy-not-ie').style.display = "none";
+    } else {
+        document.getElementById('flexy-ie').style.display = "none";
+    }
+    function flip(e) {
+        e--
+        $(".flip-card").eq(e).toggleClass('turn');
+    }
+    function flipIE(e) {
+        e--
+        $(".ie-card").eq(e).toggleClass('show');
+    }
+</script>

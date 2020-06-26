@@ -1,59 +1,8 @@
 <div id="page-container">
     <div class="container">
-        <h2>
-            <span>2.2</span>
-            Antecedentes históricos
-        </h2>
-        <section class="timeline">
-            <article>
-                <div class="item">
-                    <div class="pic" 
-                         style="background-image: url('img/Cripto_4.jpeg');"
-                         onclick="showTimelineContent(1)">
-                        <span style="color: white">1998</span>
-                    </div>
-                </div>
-                <div class="content active">
-                    <p>El antecedente de las criptomonedas lo encontramos, en 1998, en el trabajo del ingeniero informático Wei Dai que establece un sistema descentralizado de tipo cooperativo con una doble funcionalidad:</p>
-                    <ul>
-                        <li>La creación de dinero.</li>
-                        <li>Su intercambio, mediante un sistema de validación de cada operación de intercambio, consistente en la generación de una evidencia de naturaleza criptográfica por cada transacción, análogo al sistema de validación de la firma electrónico.</li>
-                    </ul>
-                    <p>La propuesta de Wei se asentaba en dos <b>elementos básicos</b>:</p>
-                    <ul>
-                        <li>La <b>creación de una comunidad económica</b> en la que todos los miembros podían crear dinero, mediante la validación de las transacciones efectuadas por el resto de miembros (lo que hoy conocemos como minería). Cualquiera de los miembros podría realizar operaciones de intercambio.</li>
-                        <li>El <b>sistema es transparente</b>. Todos los miembros de la comunidad tienen acceso a las operaciones realizadas en el sistema por el resto de miembros de tal manera que no existen defectos de información.</li>
-                    </ul>
-                </div>
-            </article>
-            <article>
-                <div class="item">
-                    <div class="pic" 
-                         style="background-image: url('img/Cripto_5.jpg');"
-                         onclick="showTimelineContent(2)">
-                        <span style="color: white">2009</span>
-                    </div>
-                </div>
-                <div class="content">
-                    <p>
-                        Sobre este trabajo, y bajo el seudónimo Satoshi Nakamoto, el 3 de enero de 2009 se crea una red <i>peer to peer</i>, que materializa la idea de Wei, y que implementa la doble funcionalidad de creación de dinero, <i>Bitcoin</i>, y soporte y validación de su intercambio. El sistema funciona como un libro de registro de contabilidad, recogiendo de manera ininterrumpida las operaciones realizadas.
-                    </p>
-                </div>
-            </article>
-        </section>
+        <h3>Video</h3>
+        <p>En el video sobre criptomonedas vamos a caracterizar este activo económico partiendo de su diferenciación con otros activos con los que suele asimilarse, para entenderlo como bien tecnológico y como bien jurídico.</p>        
+        <video controls src="video/background.mp4"></video>
+        <!-- <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/da689d66-12a7-48d3-b6b1-be07bd7ff989?autoplay=true&amp;showinfo=true" allowfullscreen style="border:none;"></iframe> -->
     </div>
 </div>
-<script>
-    var contents = document.querySelectorAll('.content');
-
-    function showTimelineContent(e) {
-        e--;
-        for(i = 0; i < contents.length; i++) {
-            if(i === e) {
-                contents[i].classList.add('active');
-            } else {
-                contents[i].classList.remove('active');
-            }
-        }
-    }
-</script>

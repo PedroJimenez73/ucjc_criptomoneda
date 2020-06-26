@@ -1,81 +1,68 @@
 <div id="page-container">
-    <div class="container" id="top">
-	    <h1>
-            Glosario
-        </h1>
-        <p class="instructions">Pulse sobre los términos para ampliar la información.</p>
-        <div class="glosario" >
-            <div class="lista_terminos">
-                <div id="menu-glosario" style="min-height: 425px;">
-                    
+    <div class="container">
+        <p><b>Características del BC:</b></p>
+        <div class="tab">
+            <div class="tabs">
+                <div class="check" onclick="toggleTab(1)">
+                    <p>Tracto sucesivo</p>
+                </div>
+                <div onclick="toggleTab(2)">
+                    <p>Sellado de tiempo no cualificado</p>
                 </div>
             </div>
-            <div id="contenedores" class="contenedor_info"></div>
-        </div>
-        <div class="glosario-small">
-            <div id="mini-menu-glosario" class="lista_terminos_small" style="min-height: 300px;">
-            </div>
-            <div id="contenedores-mini">
-
+            <div class="content-tabs">
+                <div class="show visible" style="z-index: 10;">
+                    <p>
+                        Tal y como se ha podido ver en este curso las transacciones en BC generan un <i>hash</i> que sirve para enlazar el nuevo bloque creado para la nueva transacción con el bloque anterior, quedando así vinculado a toda la cadena de forma inequívoca equiparable así a lo que jurídicamente se denomina tracto sucesivo, es decir la situación que permite trazar de forma cierta y sucesiva los antecedentes de determinados actos o transacciones. En estos casos el <i>Hash</i> operaría como metadato, es decir, como elemento que proporcionaría información sobre la operación o transacción en BC. Existe ya algún precedente jurisprudencial en Estado Unidos; Lorraine vs.Markel American Corporation, en el que se acepta el valor probatorio del <i>hash</i> como elemento que aporta información fiable sobre operaciones o transacciones en BC.
+                    </p>
+                </div>
+                <div class="show">
+                    <p>Sin embargo, también es necesario señalar, respecto de su robustez probatoria, que BC ofrece un sellado de tiempo no cualificado. El Art 41 del Reglamento Europeo de Firma Electrónica establece la distinción entre sellos de tiempo cualificados y no cualificados. Básicamente los sellados de tiempo cualificados son aquellos verificados por un Prestador de Servicios de Confianza y en estos casos gozará de presunción de exactitud de la fecha y hora, acreditando por si solo tanto el momento exacto desde el cual el registro permanece inalterado como también el propio contenido del registro. En el caso de BC no ofrece un sellado cualificado, ello significa que en un proceso judicial habrá que acreditar que el hash garantiza la inalterabilidad del registro, mediante la correspondiente prueba pericial, en este caso criptográfica, es decir habrá que respaldar mediante un informe pericial la robustez de la prueba.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <script>
-    var terminos = 
-    [
-        '<i>Bitcoin</i>',
-        '<i>Blockchain</i>',
-        'Criptomoneda'
-    ];
-    var definiciones = 
-    [
-        'Moneda digital o criptomoneda que puede utilizarse para intercambiar bienes y servicios como cualquier otra moneda en los lugares donde se acepte. El <i>Bitcoin</i>, de símbolo ฿ y abreviatura BTC o XBT, es una moneda electrónica libre y descentralizada que permite la transacción directa sin ningún intermediario.',
-        'Cadena de bloques traducido literalmente, es un gigantesco libro de cuentas en los que los registros (los bloques) están enlazados y cifrados para proteger la seguridad y privacidad de las transacciones. Es, en otras palabras, una base de datos distribuida y segura (gracias al cifrado) que se puede aplicar a todo tipo de transacciones que no tienen por qué ser necesariamente económicas.',
-        'La criptomoneda o criptodivisa es un tipo de moneda digital que utiliza la criptografía para proporcionar un sistema de pagos seguro. Estas técnicas de cifrado sirven para regular la generación de unidades monetarias y verificar la transferencia de fondos. No necesitan de un banco central u otra institución que las controle.',
-    ];
-    var menuGlosario = document.getElementById('menu-glosario');
-    var contenedores = document.getElementById('contenedores');
-    var minimenuGlosario = document.getElementById('mini-menu-glosario');
-    var contenedoresMini = document.getElementById('contenedores-mini');
-    var contenidomenuGlosario = '';
-    var contenidoCont = '';
-    var contenidoMinimenuGlosario = '';
-    var contenidoContMini = '';
-    for (i=0; i < terminos.length; i++){
-        contenidomenuGlosario += '<p onclick="glosario('+ i + ')">'+ terminos[i] + '</p>';
-        contenidoCont += '<div id="cont' + i + '"><p class="titulo_termino">' + terminos[i] + '</p><p class="info_termino">'+ definiciones[i] + '</p></div>';
-        contenidoMinimenuGlosario +=  '<a href="#cont' + (i+terminos.length) +'">' + terminos[i] + '</a>';
-        contenidoContMini +=  '<span id="cont' + (i+terminos.length) +'" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span><div class="glosario_termino"><p class="titulo_termino_small">' + terminos[i] + '<a href="#top" class="titulo_termino_arriba">volver al índice</a></p><p class="info_termino_small">' + definiciones[i] + '</p></div>';
-    }
-    menuGlosario.innerHTML = contenidomenuGlosario;
-    contenedores.innerHTML = contenidoCont;
-    minimenuGlosario.innerHTML = contenidoMinimenuGlosario;
-    contenedoresMini.innerHTML = contenidoContMini;
-    
-    $("a").on("click",function(){
-        if(this.hash !== ""){
-            var hash = this.hash;
-            $("html, body").animate({
-                scrollTop: $(hash).offset().top
-            }, 800);
+    var tab = document.querySelector('.tab');
+    var tabs = document.querySelectorAll('.tabs div');
+    var contents = document.querySelectorAll('.content-tabs .show');
+    var body = document.querySelector('body');
+
+    var maxHeightContent = 0;
+    var tabsHeigth = 0;
+
+    if(window.innerWidth > 440) {
+        for (i = 0; i < contents.length; i++) {
+            if(contents[i].offsetHeight > maxHeightContent) {
+                maxHeightContent = contents[i].offsetHeight;
+            }
         }
-    });
-    
-    function glosario(j){
-        id2='#cont'+j;
-        $(".contenedor_info div").fadeOut(0);
-        $(id2).fadeIn(0);
+
+        tab.style.height = maxHeightContent + 40 + 'px';
+
+        for (j = 0; j < tabs.length; j++) {
+            tabs[j].style.height = (maxHeightContent + 40) / tabs.length + 'px';
+        }
+    } else {
+        for (i = 0; i < tabs.length; i++) {
+            maxHeightContent += tabs[i].offsetHeight;
+        }
+
+        tab.style.height = maxHeightContent + 'px';
     }
-</script>
-<script>
-/* Smooth vertical */
-$("a").on("click",function(){
-    if(this.hash !== ""){
-        var hash = this.hash;
-        $("html, body").animate({
-            scrollTop: $(hash).offset().top
-        }, 800);
+
+    function toggleTab(e) {
+        e--;
+        for (k = 0; k < tabs.length; k++) {
+            if (e !== k) {
+                tabs[k].classList.remove('check');
+                contents[k].classList.remove('visible');
+            } else {
+                tabs[k].classList.add('check');
+                contents[k].classList.add('visible');
+            }
+        }
     }
-});
+
 </script>

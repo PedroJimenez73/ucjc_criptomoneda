@@ -380,6 +380,10 @@ p.instructions {
   cursor: pointer;
 }
 
+.flip-card.super {
+  height: 700px;
+}
+
 .flip-card.turn {
   transform: rotatey(180deg);
 }
@@ -454,6 +458,10 @@ p.orange-text {
   cursor: pointer;
 }
 
+.ie-card.super {
+  height: 800px;
+}
+
 .ie-front-card {
   position: absolute;
   top: 0;
@@ -506,7 +514,28 @@ p.orange-text {
     position: relative;
     margin: 20px;
     width: 500px;
-    height: 500px;
+    height: 900px;
+  }
+
+  .ie-card {
+    position: relative;
+    margin: 20px;
+    width: 500px;
+    height: 900px;
+  }
+
+  .flip-card.super {
+    position: relative;
+    margin: 20px;
+    width: 500px;
+    height: 900px;
+  }
+
+  .ie-card.super {
+    position: relative;
+    margin: 20px;
+    width: 500px;
+    height: 900px;
   }
 }
 .pic-float {
@@ -544,6 +573,18 @@ p.orange-text {
     margin: 0 0 1.5rem;
   }
 }
+video {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin: 2rem auto;
+}
+
+iframe {
+  display: block;
+  margin: 2rem auto;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -569,9 +610,8 @@ p.orange-text {
 .modal {
   margin-top: 2rem;
   min-height: 200px;
-  min-width: 300px;
   max-width: 540px;
-  position: fixed;
+  position: absolute;
   display: none;
   opacity: 0;
   top: 2rem;
@@ -617,8 +657,56 @@ p.orange-text {
 .modal.jumbo {
   height: calc(100vh - 8rem);
   width: 80%;
-  max-width: 720px;
+  max-width: 1280px;
   background-color: white;
+  overflow: auto;
+  position: absolute;
+  top: 2rem;
+}
+.modal.jumbo .modal-body {
+  margin-top: 2rem;
+}
+.modal.jumbo .modal-body p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.modal-header-fixed {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 1280px;
+  z-index: 260;
+  transition: 500ms all ease-in-out;
+  background-color: #a4a3a3;
+  padding: 0.5rem 1rem;
+}
+.modal-header-fixed img {
+  cursor: pointer;
+}
+
+.modal-header-fixed.show {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal-header-fixed.show.visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 1;
+}
+
+.lock-scroll {
+  overflow: hidden;
 }
 
 /* Slides */
@@ -960,6 +1048,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  z-index: 20;
 }
 footer button {
   border: white 1px solid;
@@ -1348,6 +1437,57 @@ header img {
   align-items: center;
 }
 
+.credits {
+  height: calc(100vh - 300px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.credits .data {
+  color: white;
+  padding: 1rem 2rem;
+  background-color: #84A0B4;
+  position: relative;
+  top: 0;
+  left: 50px;
+}
+.credits .data hr {
+  border: none;
+  height: 0.5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.credits .data p:nth-of-type(1) {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.credits .data p:nth-of-type(2) {
+  font-size: 2rem;
+}
+.credits .data p:nth-of-type(3) {
+  font-size: 0.8rem;
+}
+.credits img {
+  width: 40%;
+}
+
+@media (max-width: 720px) {
+  .credits {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .credits .data {
+    padding: 1rem 2rem;
+    top: 50px;
+    left: 0;
+    width: 80%;
+  }
+  .credits img {
+    width: 100%;
+  }
+}
 .frontpage {
   display: flex;
   flex-direction: row;
