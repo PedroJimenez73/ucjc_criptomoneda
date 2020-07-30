@@ -97,6 +97,15 @@
     animation-fill-mode: forwards;
 }
 
+.fade-once {
+    opacity: 0;
+    animation-name: fade;
+    animation-duration: 300ms;
+    animation-delay: 11s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .fade-medio-uno {
     opacity: 0;
     animation-name: fade;

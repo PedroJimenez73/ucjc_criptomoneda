@@ -1,8 +1,89 @@
 <div id="page-container">
     <div class="container">
-        <h3>Video</h3>
-        <p>En el video sobre criptomonedas vamos a caracterizar este activo económico partiendo de su diferenciación con otros activos con los que suele asimilarse, para entenderlo como bien tecnológico y como bien jurídico.</p>        
-        <video controls src="video/background.mp4"></video>
-        <!-- <iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/da689d66-12a7-48d3-b6b1-be07bd7ff989?autoplay=true&amp;showinfo=true" allowfullscreen style="border:none;"></iframe> -->
+       <h1>Características del principio de jerarquía normativa (art. 9.3 C.E.)</h1>
+        <section class="timeline">
+            <article>
+                <div class="item">
+                    <div class="pic" 
+                         style="background-color: #84A0B4;"
+                         onclick="showTimelineContent(1)">
+                        <span style="color: white; font-size: 4rem">1</span>
+                    </div>
+                </div>
+                <div class="content active">
+                    <p>El Código Civil establece en el artículo 1.2. que cualquier norma jurídica que sea contraria a l contenido de una superior no tienen validez legal. </p>
+                </div>
+            </article>
+            <article>
+                <div class="item">
+                    <div class="pic" 
+                         style="background-color: #84A0B4;"
+                         onclick="showTimelineContent(2)">
+                        <span style="color: white; font-size: 4rem">2</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>
+                        En consonancia la Ley Orgánica del Poder Judicial (LOPJ) recoge que el poder judicial por medio de sus magistrados está obligado por imperativo legal a inaplicar los reglamentos o normas que colisionan con la Constitución, con la Ley o cualquier otra norma con valor de ley (decreto ley y/o decreto legislativo) que vulnere el principio de jerarquía normativa. 
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div class="item">
+                    <div class="pic" 
+                         style="background-color: #84A0B4;"
+                         onclick="showTimelineContent(3)">
+                        <span style="color: white; font-size: 4rem">3</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>
+                        “Lex posterior derogat priori”. Significa que cualquier norma dictada y publicada de forma posterior a otra norma del mismo o menor rango en la jerarquía normativa, queda derogada o modificada. 
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div class="item">
+                    <div class="pic" 
+                         style="background-color: #84A0B4;"
+                         onclick="showTimelineContent(4)">
+                        <span style="color: white; font-size: 4rem">4</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>
+                        “Lex specialis derogat legi generali”. En este caso se entiende que la norma especializada en la materia se aplica de preferencia sobre la norma general. 
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div class="item">
+                    <div class="pic" 
+                         style="background-color: #84A0B4;"
+                         onclick="showTimelineContent(5)">
+                        <span style="color: white; font-size: 4rem">5</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <p>
+                        La jurisprudencia del Tribunal Constitucional ha consolidado la doctrina referida a que la vulneración al principio de jerarquía normativa consagrada en el art. 9.3 de la C.E. no es argumento para recurrir en Amparo ante el Tribunal Constitucional puesto que no se trata de un derecho fundamental. 
+                    </p>
+                </div>
+            </article>
+        </section>
     </div>
 </div>
+<script>
+    var contents = document.querySelectorAll('.content');
+
+    function showTimelineContent(e) {
+        e--;
+        for(i = 0; i < contents.length; i++) {
+            if(i === e) {
+                contents[i].classList.add('active');
+            } else {
+                contents[i].classList.remove('active');
+            }
+        }
+    }
+</script>

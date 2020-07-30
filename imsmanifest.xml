@@ -1,14 +1,4 @@
 <?xml version="1.0" standalone="no" ?>
-<!--
-Single SCO with basic runtime calls. SCORM 2004 3rd Edition.
-
-Provided by Rustici Software - http://www.scorm.com
-
-This example demonstrates the use of basic runtime calls in a multi-page SCO. It
-includes a demonstration of bookmarking, status reporting (completion and success), 
-score and time. It also includes the addition of a basic "controller" for providing
-intra-SCO navigation.
--->
 
 <manifest identifier="com.ucjc.scorm" version="1"
           xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
@@ -26,13 +16,13 @@ intra-SCO navigation.
   <metadata>
 		<schema>ADL SCORM</schema>
 		<schemaversion>2004 3rd Edition</schemaversion>
+         <adlcp:location>metadata_course.xml</adlcp:location>
 	</metadata>
-  <organizations default="golf_sample_default_org">
-		<organization identifier="golf_sample_default_org" adlseq:objectivesGlobalToSystem="false">
-			<title>Criptomoneda</title>
+  <organizations default="ucjc_isca_scorm">
+		<organization identifier="ucjc_isca_scorm" adlseq:objectivesGlobalToSystem="false">
+			<title>Introducción al Derecho y al Derecho Administrativo</title>
 			<item identifier="item_1" identifierref="resource_1">
-				<title>Criptomoneda</title>
-        <!-- Include some basic sequencing information that overrides the defaults-->
+				<title>Introducción al Derecho y al Derecho Administrativo</title>
         <imsss:sequencing>
           <imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="true"/>
         </imsss:sequencing>

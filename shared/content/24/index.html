@@ -1,36 +1,103 @@
 <div id="page-container">
-    <div class="container">
-        <h3>
-            ¿Entonces, qué son las criptomonedas?
-        </h3>
-        <p>
-            Descartado que las criptomonedas sean dinero de curso legal o dinero electrónico partimos de su consideración como 
-            <b>una entidad que representa un valor económico, cuya finalidad es servir como medio de intercambio y que por lo tanto adquiere sentido en la medida en que es propiedad de una persona física o jurídica</b>
-            , así la criptomoneda nace técnicamente con las operaciones de minado, pero jurídicamente con la adquisición de su propiedad por parte del minero o cualquier adquirente.  Con estos caracteres una criptomoneda es un bien, en el sentido atribuido por el 
-            <b>Art. 333 del Código Civil (CC)</b>:
-        </p>
-        <div class="cita">
-            <p>
-                <img src="img/icons/quote.svg">
-            </p>
-            <p class="quote">Todas las cosas que son o pueden ser objeto de apropiación se consideran bienes</p>
+    <div class="container" id="top">
+	    <h1>
+            Glosario
+        </h1>
+        <p class="instructions">Pulse sobre los términos para ampliar la información.</p>
+        <div class="glosario" >
+            <div class="lista_terminos">
+                <div id="menu-glosario" style="min-height: 425px;">
+                    
+                </div>
+            </div>
+            <div id="contenedores" class="contenedor_info"></div>
         </div>
-        <div class="super-text">
-            <p>
-                Así <b>podría definirse criptomoneda como una entidad inmaterial que por tener valor económico y ser susceptible de apropiación tiene la consideración de bien inmaterial mueble </b> (Como aquellos bienes transportables de un lugar a otro, independientemente de si el lugar es físico o virtual. Ver art 335 CC.), <b>cuya finalidad es servir de medio de intercambio al representar un valor</b>.
-            </p>
-        </div>
-        <p>
-            En este sentido se pronuncia la reciente sentencia del Tribunal Supremo STS 326/2019, 20 de Junio de 2019. Definiendo la criptomoneda como <b>unidad de cuenta</b>, es decir como entidad a la que de forma consensuada se asigna un determinado valor, o lo que es lo mismo, un bien de carácter patrimonial susceptible, por lo tanto, de valoración económica.
-        </p>
-        <div class="cita">
-            <p>
-                <img src="img/icons/link.svg">
-            </p>
-            <p>Sentencia tribunal Supremo STS 326/2019 de 20 de Junio de 2019</p>
-            <div class="links">
-                <a href="https://supremo.vlex.es/vid/797938401" target="_blank">https://supremo.vlex.es/vid/797938401</a>
+        <div class="glosario-small">
+            <div id="mini-menu-glosario" class="lista_terminos_small" style="min-height: 300px;">
+            </div>
+            <div id="contenedores-mini">
+
             </div>
         </div>
     </div>
 </div>
+<script>
+    var terminos = 
+    [
+        'Constitución ',
+        'Decreto Comisión Delegada Gobierno',
+        'Decretos Consejo de Ministros',
+        'Decreto Legislativo',
+        'Decreto Ley',
+        'Decreto Presidente Gobierno',
+        'Jerarquía entre Reglamentos',
+        'Ley',
+        'Ley Ordinaria',
+        'Ley Orgánica',
+        'Normas con Valor de Ley',
+        'Órdenes Ministeriales',
+        'Principio de Jerarquía Normativa',
+        'Reglamentos'
+    ];
+    var definiciones = 
+    [
+        'Es la llamada Ley de Leyes, es la suprema norma jurídica que enmarca los límites del ordenamiento jurídico de un Estado.',
+        'Las Comisiones Delegadas están integradas solo por los Ministros que la norma de creación ha previsto sobre asuntos y materias específicos y tiene potestad para aprobar disposiciones normativas.',
+        'Los Reglamentos que son aprobados por el máximo órgano colectivo del Poder Ejecutivo, integrado por los vicepresidentes, ministros y el presidente de Gobierno que se reúnen los miércoles.',
+        'Las Cortes Generales podrán delegar en el Gobierno la potestad de dictar normas con rango de ley sobre materias determinadas no incluidas en el artículo anterior. La delegación legislativa deberá otorgarse mediante una ley de bases cuando su objeto sea la formación de textos articulados o por una ley ordinaria cuando se trate de refundir varios textos legales en uno solo.',
+        'En caso de extraordinaria y urgente necesidad, el Gobierno podrá dictar disposiciones legislativas provisionales que tomarán la forma de Decretos-leyes sin poder regular materias reservadas a las leyes orgánicas.',
+        'Son los Reglamentos que dicta el Presidente del Gobierno y que tienen principalmente contenido organizativo.',
+        'Aparte de la subordinación de los Reglamentos a las leyes, normas con rango de ley y a la Constitución, los Reglamentos también están ordenados en escalera conforme a un principio de jerarquía.',
+        'Es la norma jurídica que emana de las Cortes a través del procedimiento previsto en las respectivas cámaras, Congreso de los Diputados y Senado. La Ley es el resultado de la voluntad popular.',
+        'Todas las demás leyes que regulan materias diferentes a las materias reservadas por la propia Constitución española a las leyes orgánicas, son las llamadas leyes ordinarias que tienen una mayoría diferente (mayoría simple) para su aprobación.',
+        'Son leyes orgánicas las que se definen por las materias reservadas por la propia Constitución y que requiere una mayoría cualificada para su aprobación. Relativas al desarrollo de los derechos fundamentales y de las libertades públicas, las que aprueben los Estatutos de Autonomía, entre otras.',
+        'La Constitución en ocasiones faculta al poder ejecutivo la potestad legislativa para dictar normas con valor de ley. El hecho de que tengan valor de ley significa entonces que están subordinadas a la Constitución y que tienen el mismo nivel que las leyes del parlamento. Hay dos clases de normas con valor de ley: el Decreto Ley y los Decretos Legislativos.',
+        'Son las normas jurídicas propias de los Ministerios, donde los Reglamentos llevan el nombre de Orden Ministerial.',
+        'Consiste en la graduación de las normas jurídicas del ordenamiento jurídico de un Estado. Subordina la validez de una norma a otra norma, de tal manera que una norma es jerárquicamente superior a otra cuando la validez de esta depende de aquella.',
+        'Son las normas jurídicas propias del Gobierno y de la Administración Pública. Por tanto, no puede ser definida como la expresión popular. Por tanto, están subordinadas a las normas con valor de ley, a las leyes y a la Constitución.'
+    ];
+    var menuGlosario = document.getElementById('menu-glosario');
+    var contenedores = document.getElementById('contenedores');
+    var minimenuGlosario = document.getElementById('mini-menu-glosario');
+    var contenedoresMini = document.getElementById('contenedores-mini');
+    var contenidomenuGlosario = '';
+    var contenidoCont = '';
+    var contenidoMinimenuGlosario = '';
+    var contenidoContMini = '';
+    for (i=0; i < terminos.length; i++){
+        contenidomenuGlosario += '<p onclick="glosario('+ i + ')">'+ terminos[i] + '</p>';
+        contenidoCont += '<div id="cont' + i + '"><p class="titulo_termino">' + terminos[i] + '</p><p class="info_termino">'+ definiciones[i] + '</p></div>';
+        contenidoMinimenuGlosario +=  '<a href="#cont' + (i+terminos.length) +'">' + terminos[i] + '</a>';
+        contenidoContMini +=  '<span id="cont' + (i+terminos.length) +'" style="display: block; margin-top: -100px; padding-bottom: 100px">&nbsp;</span><div class="glosario_termino"><p class="titulo_termino_small">' + terminos[i] + '<a href="#top" class="titulo_termino_arriba">volver al índice</a></p><p class="info_termino_small">' + definiciones[i] + '</p></div>';
+    }
+    menuGlosario.innerHTML = contenidomenuGlosario;
+    contenedores.innerHTML = contenidoCont;
+    minimenuGlosario.innerHTML = contenidoMinimenuGlosario;
+    contenedoresMini.innerHTML = contenidoContMini;
+    
+    $("a").on("click",function(){
+        if(this.hash !== ""){
+            var hash = this.hash;
+            $("html, body").animate({
+                scrollTop: $(hash).offset().top
+            }, 800);
+        }
+    });
+    
+    function glosario(j){
+        id2='#cont'+j;
+        $(".contenedor_info div").fadeOut(0);
+        $(id2).fadeIn(0);
+    }
+</script>
+<script>
+/* Smooth vertical */
+$("a").on("click",function(){
+    if(this.hash !== ""){
+        var hash = this.hash;
+        $("html, body").animate({
+            scrollTop: $(hash).offset().top
+        }, 800);
+    }
+});
+</script>

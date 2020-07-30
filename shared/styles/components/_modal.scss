@@ -71,6 +71,18 @@
     opacity: 1;
 }
 
+@media (max-width: 540px) {
+    .modal {
+        width: 70%;
+    }
+}
+
+@media (max-width: 440px) {
+    .modal {
+        width: 80%;
+    }
+}
+
 .modal.jumbo {
     height: calc(100vh - 8rem);
     width: 80%;

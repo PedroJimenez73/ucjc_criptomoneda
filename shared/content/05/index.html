@@ -1,22 +1,22 @@
 <div id="page-container">
     <div class="container">
-        <h1>Criptomonedas y Blockchain: Conceptos y aspectos jurídicos</h1>
+        <h1>PRINCIPIO DE JERARQUÍA NORMATIVA</h1>
         <h3>Puesta en situación</h3>
        <div class="actividades">
-            <p>¿Dónde se guardan los bitcoins?</p>
+            <p>Diga si esta afirmación es correcta: ¿un Real Decreto dictado por el Presidente de Gobierno es jerárquicamente superior a una Ley de las Cortes?</p>
             <hr>
            <form>
                <label>
                    <input type="radio" name="question" value="a">
-                   ¿Uno va al banco con un USB y los ingresa en su cuenta?
+                   Por supuesto que sí, el Presidente del Gobierno es el jefe del poder ejecutivo y es el que dirige todos los poderes del Estado.
                </label>
                <label>
                    <input type="radio" name="question" value="b">
-                   ¿Se quedan en el disco duro esperando a ser cambiados?
+                   Por supuesto que no. La ley es la norma que jerárquicamente está por debajo de la Constitución y por tanto por encima de todas las demás normas entre ellas los Reglamentos del Presidente, que se llaman Reales Decretos.
                </label>
                <label>
                    <input type="radio" name="question" value="c">
-                   ¿O se guardan en monederos?
+                   Claro que sí, la ley es la norma que dicta el Consejo de Ministros y el Presidente es el jefe del Consejo de Ministros. 
                </label>
                <div class="buttons">
                    <button type="button" onclick="getAnswer()">Comprobar</button>
@@ -24,13 +24,13 @@
            </form>
            <div class="feedback">
                <div class="feed">
-                    Incorrecto. Ningún banco en España acepta <i>bitcoins</i> para ingresarlos en las cuentas.
-               </div>
-               <div class="feed">
-                    Incorrecto. Nadie se arriesga a dejarla en el disco duro o en una memoria USB esperando a que un habilidoso <i>hacker</i> se la lleve. Por ejemplo, Corea del Norte tiene una división de <i>hackers</i> que solo se dedica a intentar robar <i>bitcoins</i> ajenos.
+                    No, no es correcta. El presidente del Gobierno dirige el poder ejecutivo y las leyes es la competencia del poder legislativo, por tanto, los Reales Decretos del Presidente deben estar acordes al contenido de las leyes, de lo contrario serían nulos de pleno derecho. 
                </div>
                <div class="feed correct">
-                   Correcto. La popularización de las criptomonedas ha hecho que las empresas de tecnología diseñen unos monederos especiales para almacenarlas con total seguridad. Se trata de una especie de dispositivos USB especiales que traen medidas de seguridad extraordinarias. Estos gadgets no guardan los <i>bitcoins</i> en sí, sino las claves privadas que dan autorización a realizar operaciones sobre las direcciones <i>bitcoin</i> a las que se asocian. 
+                    Sí, sí es correcta. La ley prima sobre cualquier otra norma salvo la Constitución.
+               </div>
+               <div class="feed">
+                   No, no es correcta. La ley solo es dictada por el Congreso y el Senado que son las cámaras del poder legislativo y el presidente es el jefe del poder ejecutivo y deben estar sometidos a la ley siempre. 
                </div>
            </div>
        </div>
@@ -39,7 +39,7 @@
 <script>
     var inputs = document.querySelectorAll('input');
     var feeds = document.querySelectorAll('.feed');
-    var correctAnswer = 'c';
+    var correctAnswer = 'b';
 
     function getAnswer() {
         for(i = 0; i < inputs.length; i++) {

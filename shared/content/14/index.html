@@ -1,77 +1,40 @@
 <div id="page-container">
     <div class="container">
-        <h3>
-            1.1.3	Eficacia probatoria del registro documental en BC
-        </h3>
-        <p>
-            Se discute también sobre BC <b>como medio de prueba de la realización de determinados actos y negocios jurídicos</b>, en su calidad de base de datos y repositorio documental que registra documentos y transacciones.
-        </p>
-        <p>
-            Tal y como se señalaba, el registro en BC está dotado de ciertas características que resultan idóneas como medio de prueba: es inalterable, de carácter virtual, potencialmente ilimitado, de acceso público, descentralizado y actualizado en tiempo real. Veamos ahora que dice nuestro ordenamiento jurídico sobre los medios de prueba:
-        </p>
-        <div class="tab">
-            <div class="tabs">
-                <div class="check" onclick="toggleTab(1)">
-                    <p>Art.299 de la Ley de Enjuiciamiento Civil</p>
+        <h1>
+            Decreto Ley
+        </h1>
+        <p>En caso de <b>extraordinaria y urgente necesidad</b>, el Gobierno podrá dictar <b>disposiciones legislativas provisionales</b> que tomarán la forma de Decretos-leyes y que no podrán afectar al ordenamiento de las instituciones básicas del Estado, a los derechos, deberes y libertades de los ciudadanos y al régimen de las Comunidades Autónomas ni al Derecho electoral general. Recordemos que estas materias están expresamente reservadas a la ley orgánica y es coherente que estén vedadas a los decretos leyes.</p>
+        <section class="accordion">
+            <article onclick="toggleAccordion(1)">
+                <div class="accordion-title">
+                    <span>¿Cuándo deben ser debatidos?</span>
+                    <img class="plus" src="img/icons/plus.svg" alt="">
+                    <img class="minus" src="img/icons/minus.svg" alt="">
                 </div>
-                <div onclick="toggleTab(2)">
-                    <p>Art. 24 de la Constitución</p>
+                <div class="accordion-content">
+                    <p>Los Decretos-leyes deberán ser inmediatamente sometidos a debate y votación de totalidad al Congreso de los Diputados, convocado al efecto si no estuviere reunido, en el plazo de los treinta días siguientes a su promulgación (se da cuando el monarca firma o sanciona la ley y ordena que sea cumplida por todos sus destinatarios y que es anterior a la publicación en el Boletín Oficial del Estado (BOE). El control en este caso solo corresponde al Congreso de los Diputados y no al Senado.</p>
                 </div>
-            </div>
-            <div class="content-tabs">
-                <div class="show visible" style="z-index: 10;">
-                    <p>El Art. 299 de La Ley de Enjuiciamiento Civil no establece una limitación específica de los medios de prueba, así tras enumerar determinados medios como los documentales, los periciales o los testificales, señala que:</p>
-                    <p>“También se admitirán, conforme a lo dispuesto en esta Ley, los medios de reproducción de la palabra, el sonido y la imagen, así como los instrumentos que permiten archivar y conocer o reproducir palabras, datos, cifras y operaciones matemáticas llevadas a cabo con fines contables o de otra clase, relevantes para el proceso.</p>
-                    <p>Cuando por cualquier otro medio no expresamente previsto en los apartados anteriores de este artículo pudiera obtenerse certeza sobre hechos relevantes, el tribunal, a instancia de parte, lo admitirá como prueba, adoptando las medidas que en cada caso resulten necesarias.”</p>
+            </article>
+            <article onclick="toggleAccordion(2)">
+                <div class="accordion-title">
+                    <span>¿Qué plazo tiene el congreso para pronunciarse?</span>
+                    <img class="plus" src="img/icons/plus.svg" alt="">
+                    <img class="minus" src="img/icons/minus.svg" alt="">
                 </div>
-                <div class="show">
-                    <p>Más allá del detalle de este artículo, la propia constitución en su artículo 24, establece el derecho a “utilizar los medios de prueba pertinentes para la defensa” sin más limitaciones que precisamente su pertinencia.</p>
+                <div class="accordion-content">
+                    <p>El Congreso habrá de pronunciarse expresamente dentro de ese plazo de 30 días sobre su convalidación o derogación, para lo cual el Reglamento de la Cámara –Congreso de los Diputados-, establecerá un procedimiento especial y sumario.</p>
                 </div>
-            </div>
-        </div>
-        <p>Parece claro, por tanto, que el registro de BC, sería aceptable como prueba. Es necesario ahora examinar su idoneidad y alcance, es decir, como de robusto o creíble es a la hora de acreditar determinados hechos o circunstancias . En esta consideración es fundamental una de las características señaladas; la inmutabilidad, esto es que los registros en BC son inalterables y por lo tanto resultan inalterados desde un momento temporal determinado gracias al denominado sellado de tiempo.</p>
+            </article>
+            <article onclick="toggleAccordion(3)">
+                <div class="accordion-title">
+                    <span>Tramitación y disposiciones en caso de falta de consenso</span>
+                    <img class="plus" src="img/icons/plus.svg" alt="">
+                    <img class="minus" src="img/icons/minus.svg" alt="">
+                </div>
+                <div class="accordion-content">
+                    <p>Durante el plazo establecido de los 30 días, las Cortes podrán tramitarlos como proyectos de ley por el procedimiento de urgencia. Es usual que el Gobierno por las especiales circunstancias urgentes y extraordinarias no consulte con los partidos políticos el contenido del Decreto Ley, por lo que no pueden intervenir manifestando sus opiniones. Para subsanar esta falta de consenso, recoge la alternativa de que el partido político del Gobierno presente un proyecto de ley con el mismo contenido del Decreto Ley para surtir el trámite normal de aprobación de una ley y permitir con ello escuchar a todos los partidos de la oposición y estudiar posibles mejoras a la norma vigente y que rige por medio de un Decreto Ley surtiendo efectos legales en el mundo jurídico. El resultado será que esa nueva ley aprobada aplicará los efectos legales y derogará entonces ese Decreto Ley que fue la base.</p>
+                </div>
+            </article>
+        </section>
     </div>
 </div>
-<script>
-    var tab = document.querySelector('.tab');
-    var tabs = document.querySelectorAll('.tabs div');
-    var contents = document.querySelectorAll('.content-tabs .show');
-    var body = document.querySelector('body');
-
-    var maxHeightContent = 0;
-    var tabsHeigth = 0;
-
-    if(window.innerWidth > 440) {
-        for (i = 0; i < contents.length; i++) {
-            if(contents[i].offsetHeight > maxHeightContent) {
-                maxHeightContent = contents[i].offsetHeight;
-            }
-        }
-
-        tab.style.height = maxHeightContent + 40 + 'px';
-
-        for (j = 0; j < tabs.length; j++) {
-            tabs[j].style.height = (maxHeightContent + 40) / tabs.length + 'px';
-        }
-    } else {
-        for (i = 0; i < tabs.length; i++) {
-            maxHeightContent += tabs[i].offsetHeight;
-        }
-
-        tab.style.height = maxHeightContent + 'px';
-    }
-
-    function toggleTab(e) {
-        e--;
-        for (k = 0; k < tabs.length; k++) {
-            if (e !== k) {
-                tabs[k].classList.remove('check');
-                contents[k].classList.remove('visible');
-            } else {
-                tabs[k].classList.add('check');
-                contents[k].classList.add('visible');
-            }
-        }
-    }
-
-</script>

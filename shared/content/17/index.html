@@ -1,19 +1,77 @@
 <div id="page-container">
     <div class="container">
-        <h3>Normativa sobre protección de datos</h3>
-        <div class="row">
-            <div class="w50">
-                <p>La normativa sobre protección de datos contempla una serie de derechos de los titulares de los datos que colisionan directamente con la inmutabilidad de la que se hablaba. Concretamente dos derechos:</p>
-                <ul>
-                    <li>El <b>derecho de rectificación</b>, que permite corregir errores, modificar los datos que resulten ser inexactos o incompletos y garantizar la certeza de la información objeto de tratamiento.</li>
-                    <li>El <b>derecho de supresión o cancelación</b>, que permite que se supriman los datos que resulten ser inadecuados.</li>
-                </ul>
-                <p>El problema vendría cuando el titular de los datos de carácter personal alojados en BC quisiera ejercer alguno de estos derechos y solicitar, por ejemplo, respecto de determinado contenido digital, la eliminación de sus datos personales.</p>
-                <p>Tal y como se señalará en el apartado sobre Smart-contracts se están proponiendo algunas soluciones basadas en la posibilidad de edición de la cadena de bloques.</p>
+        <h1>Reales Decretos</h1>
+        <p><b>Podemos distinguir dos tipos de Real Decreto:</b></p>
+        <div class="tab">
+            <div class="tabs">
+                <div class="check" onclick="toggleTab(1)">
+                    <p>Reales Decretos del Presidente de Gobierno</p>
+                </div>
+                <div onclick="toggleTab(2)">
+                    <p>Reales Decretos del Consejo de Ministros</p>
+                </div>
             </div>
-            <div class="w50">
-                <img style="padding: 1rem;"src="img/Cripto_12.jpg" alt="">
+            <div class="content-tabs">
+                <div class="show visible" style="z-index: 10;">
+                    <p>Son los Reglamentos que dicta el Presidente del Gobierno y que tienen principalmente contenido organizativo. Por ejemplo, la organización del número y funciones de cada vicepresidencia y ministerios.</p>
+                </div>
+                <div class="show">
+                    <p>Son los Reglamentos que son aprobados por el máximo órgano coral o colectivo del Poder Ejecutivo, integrado por los vicepresidentes, ministros y el presidente de Gobierno que se reúnen ahora los miércoles (antes los viernes) sobre materias de la competencia exclusiva del Consejo de Ministros.</p>
+                    <p>Ejemplo: El estado de alarma será declarado por el Gobierno mediante decreto acordado en Consejo de Ministros por un plazo máximo de quince días, dando cuenta al Congreso de los Diputados, reunido inmediatamente al efecto y sin cuya autorización no podrá ser prorrogado dicho plazo. El Decreto determinará el ámbito territorial a que se extienden los efectos de la declaración.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    var tab = document.querySelector('.tab');
+    var tabs = document.querySelectorAll('.tabs div');
+    var contentTabs = document.querySelector('.content-tabs');
+    var contents = document.querySelectorAll('.content-tabs .show');
+    var body = document.querySelector('body');
+
+    var maxHeightContent = 0;
+    var tabsHeigth = 0;
+
+    if(window.innerWidth > 440) {
+        for (i = 0; i < contents.length; i++) {
+            if(contents[i].offsetHeight > maxHeightContent) {
+                maxHeightContent = contents[i].offsetHeight;
+            }
+        }
+
+        tab.style.height = maxHeightContent + 40 + 'px';
+
+        for (j = 0; j < tabs.length; j++) {
+            tabs[j].style.height = (maxHeightContent + 40) / tabs.length + 'px';
+        }
+    } else {
+        for (i = 0; i < tabs.length; i++) {
+            maxHeightContent += tabs[i].offsetHeight;
+        }
+
+        tab.style.height = maxHeightContent + 'px';
+        let minHeight = 0;
+        for (i = 0; i < contents.length; i++) {
+            if(contents[i].offsetHeight > minHeight) {
+                minHeight = contents[i].offsetHeight;
+            }
+        }
+        contentTabs.style.marginBottom = minHeight + 100 + 'px';
+        tab.style.marginBottom = minHeight + 20 + 'px';
+    }
+
+    function toggleTab(e) {
+        e--;
+        for (k = 0; k < tabs.length; k++) {
+            if (e !== k) {
+                tabs[k].classList.remove('check');
+                contents[k].classList.remove('visible');
+            } else {
+                tabs[k].classList.add('check');
+                contents[k].classList.add('visible');
+            }
+        }
+    }
+
+</script>

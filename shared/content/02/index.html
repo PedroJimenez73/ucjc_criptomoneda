@@ -6,26 +6,42 @@
         <div id="back-slide">
             <button id="btn-slide-back" onclick="navBackSlide()">&lt;</button>
             <div class="slide" style="left: 0">
-                <p>
-                    Los <b>objetivos</b> de esta sesión online son los siguientes: 
-                </p>
-                <ul>
-                    <li>Caracterizar el concepto de <i>Blockchain</i>: Características y funcionalidades.</li>
-                    <li>Caracterizar el concepto de criptomoneda.</li>
-                    <li>Analizar las cuestiones jurídicas más relevantes de las criptomonedas.</li>
-                </ul>
+                <p>El principio de jerarquía normativa se fundamenta en la existencia de múltiples normas que obliga a una prelación entre ellas para evitar confusión y colisión de las normas jurídicas que integran el ordenamiento jurídico de un Estado, así lograremos conocer el mayor o menor rango de eficacia y aplicación.</p>
+                <p>Es todo país que se considere un Estado de Derecho, encontraremos diversidad de normas, partiendo por la <span class="glosary" onclick="toggleTip(1)">Constitución</span> que es la norma marco que recoge los poderes del Estado, los derechos fundamentales, los procedimientos de reforma de la misma, entre otros. Asimismo, el Estado suscribirá acuerdos con otros estados y organismos internacionales y esos documentos y su contenido entrarán a formar parte del ordenamiento jurídico interno de cada Estado firmante del mismo. Pensemos, por ejemplo, en un Convenio de Canje de Carnet de Conducir, por el cual el interesado al residir permanentemente en ese otro país y si existe el Convenio acudirá a la oficina de Tráfico y cambiará de forma automática su carnet de conducir por el de nuevo país de residencia.</p>
             </div>
             <div class="slide"> 
-                <p>
-                    ¿Cuál será la <b>estructura</b> de esta sesión? Se compone de dos bloques en los que encontramos también dos actividades a realizar por los alumnos.
-                </p>
-                <ol>
-                    <li><b>¿Qué es <i>Blockchain</i>?</b> En este primer bloque de contenidos se caracterizará el concepto para poder entenderlo y se recomendará una lectura como actividad.</li>
-                    <li><b>La criptomoneda como bien económico. Concepto y análisis jurídico</b>. En el segundo bloque se abordarán estas cuestiones y se realizará un caso práctico para poder asimilar mejor los contenidos.</li>
-                </ol>
+                <p>También encontraremos normas legales que serán elaboradas por el poder legislativo, que es el poder al que la Constitución española le fija a las Cortes (Congreso de los Diputados + Senado) la función principal de elaborar <span class="glosary" onclick="toggleTip(2)">leyes</span>, es decir, mandatos legales que deben ser obedecidas y cumplidas por todos los ciudadanos que viven en España (la mayoría de edad es a los 18 años), mediante un procedimiento que garantice que esa ley será aprobada por la mayoría prevista en las normas respectivas.</p>
+                <p>Asimismo, entre las leyes encontraremos diferentes clases, las llamadas <b>orgánicas</b> y las denominadas <b>ordinarias</b>. De igual forma al ser España un Estado de 17 Comunidades Autónomas que gozan de poder legislativo autonómico, estas comunidades tendrán también potestad legislativa a través de las Asambleas en materias propias o que han sido transferidas por el Estado español a la comunidad autónoma como la regulación del suelo o en materias concurrentes como es el caso de la cultura.</p>
+            </div>
+            <div class="slide">
+                <p>En este mismo sentido detectaremos otras normas legales que son hechas por el gobierno que está al frente del poder ejecutivo, que con el poder judicial son los pilares del Estado español. El poder ejecutivo en determinadas circunstancias (urgente y extraordinaria necesidad) podrá probar normas legislativas, con ciertas limitaciones, y que deberán ser convalidada por el Congreso de los Diputados y se llaman <b>Real Decreto Ley</b>.</p>
+                <p>En otros supuestos, el mismo poder legislativo le delega al poder ejecutivo la función por medio de leyes de delegación o bien por una ordinaria o bien por medio de una ley de bases para que el resultado sea un Decreto legislativo que se llamarán textos refundidos o textos articulados, respectivamente.</p>
+                <p>Finalmente, también encontraremos la norma jurídica propia de la administración pública que se llama <b>Reglamento</b> y que también tiene su propia jerarquía normativa en función de la posición de la autoridad administrativa autora de esa Disposición Administrativa.</p>
             </div>
             <button id="btn-slide-next" onclick="navNextSlide()">&gt;</button>
         </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal-header">
+        <img src="img/icons/x.svg" alt="" onclick="toggleTip(1)">
+    </div>
+    <div class="modal-body">
+        <h1>Constitución</h1>
+        <p>
+            Es la llamada Ley de Leyes, es la suprema norma jurídica que enmarca los límites del ordenamiento jurídico de un Estado. 
+        </p>            
+    </div>
+</div>
+<div class="modal">
+    <div class="modal-header">
+        <img src="img/icons/x.svg" alt="" onclick="toggleTip(2)">
+    </div>
+    <div class="modal-body">
+        <h1>Ley</h1>
+        <p>
+            Es la norma jurídica que emana de las Cortes a través del procedimiento previsto en las respectivas cámaras, Congreso de los Diputados y Senado. La Ley es el resultado de la voluntad popular. 
+        </p>            
     </div>
 </div>
 <script>

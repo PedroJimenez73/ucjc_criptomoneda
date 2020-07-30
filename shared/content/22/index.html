@@ -1,24 +1,82 @@
 <div id="page-container">
     <div class="container">
-        <h3>¿Se pueden considerar dinero electrónico?</h3>
-        <p>
-            Descartada su consideración como dinero Fiat convencional es preciso analizar su consideración como dinero electrónico.
-            La Ley 21/2011 de 26 de junio de dinero electrónico define <b>dinero electrónico como</b>:
-        </p>
-        <div class="cita">
-            <p>
-                <img src="img/icons/quote.svg">
-            </p>
-            <p class="quote">Todo valor monetario almacenado por medios electrónicos o magnéticos que represente un crédito sobre el emisor, que se emita al recibo de fondos con el propósito de efectuar operaciones de pago y que sea aceptado por una persona física o jurídica distinta del emisor de dinero.</p>
-        </div>
-        <div class="cita">
-            <p>
-                <img src="img/icons/link.svg">
-            </p>
-            <p>Enlace a Ley 21/2011 de 26 de junio de 2011</p>
-            <div class="links">
-                <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2011-12909" target="_blank">https://www.boe.es/buscar/doc.php?id=BOE-A-2011-12909</a>
+        <h1>Principios</h1>
+        <p><b>Principios especiales que rigen las relaciones entre diferentes ordenamientos jurídicos como es el caso del ordenamiento español y el ordenamiento autonómico:</b></p>
+        <div class="tab">
+            <div class="tabs">
+                <div class="check" onclick="toggleTab(1)">
+                    <p>Principio de la Competencia</p>
+                </div>
+                <div onclick="toggleTab(2)">
+                    <p>Principio de la Preclusión</p>
+                </div>
+                <div onclick="toggleTab(3)">
+                    <p>Principio de Supletoriedad</p>
+                </div>
+            </div>
+            <div class="content-tabs">
+                <div class="show visible" style="z-index: 10;">
+                    <p>Representa que prima el ordenamiento que tiene atribuida la competencia por encima del criterio del concepto de Estado y de Autonomía.</p>
+                </div>
+                <div class="show">
+                    <p>Significa que una determinada materia es viable su regulación por más de un ordenamiento jurídico pero una vez que uno de ellos ha regulado ese sector económico o social excluye la posibilidad de que lo haga el otro ordenamiento jurídico.</p>
+                </div>
+                <div class="show">
+                    <p>Este baremo nos informa que si hay un vacío jurídico en un ordenamiento jurídico puede recabar del otro la solución legal prevista para resolver ese espacio carente de normativa.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    var tab = document.querySelector('.tab');
+    var tabs = document.querySelectorAll('.tabs div');
+    var contentTabs = document.querySelector('.content-tabs');
+    var contents = document.querySelectorAll('.content-tabs .show');
+    var body = document.querySelector('body');
+
+    var maxHeightContent = 0;
+    var tabsHeigth = 0;
+
+    if(window.innerWidth > 440) {
+        for (i = 0; i < contents.length; i++) {
+            if(contents[i].offsetHeight > maxHeightContent) {
+                maxHeightContent = contents[i].offsetHeight;
+            }
+        }
+
+        tab.style.height = maxHeightContent + 40 + 'px';
+
+        for (j = 0; j < tabs.length; j++) {
+            tabs[j].style.height = (maxHeightContent + 40) / tabs.length + 'px';
+        }
+    } else {
+        for (i = 0; i < tabs.length; i++) {
+            maxHeightContent += tabs[i].offsetHeight;
+        }
+
+        tab.style.height = maxHeightContent + 'px';
+        let minHeight = 0;
+        for (i = 0; i < contents.length; i++) {
+            if(contents[i].offsetHeight > minHeight) {
+                minHeight = contents[i].offsetHeight;
+            }
+        }
+        contentTabs.style.marginBottom = minHeight + 100 + 'px';
+        tab.style.marginBottom = minHeight + 20 + 'px';
+    }
+
+    function toggleTab(e) {
+        e--;
+        for (k = 0; k < tabs.length; k++) {
+            if (e !== k) {
+                tabs[k].classList.remove('check');
+                contents[k].classList.remove('visible');
+            } else {
+                tabs[k].classList.add('check');
+                contents[k].classList.add('visible');
+            }
+        }
+    }
+
+</script>

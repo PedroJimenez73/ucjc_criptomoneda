@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM lom.xsd">
+  <general>
+   
+    <identifier>
+      <catalog>URI</catalog>
+      <entry>com.ucjc.isca.scorm</entry>
+    </identifier>
+    
+    <title>
+      <string language="es">Introducción al Derecho y al Derecho Administrativo</string>
+    </title>
+
+    <language>es</language>
+
+    <description>
+      <string language="es">Sin descripción aportada por el autor</string>
+    </description>
+
+    <!-- <keyword>
+      <string language="es">Blockchain</string>
+    </keyword>
+    <keyword>
+      <string language="es">Criptomoneda</string>
+    </keyword> -->
+
+    <coverage>
+      <string language="es">Universidad Camilo José Cela</string>
+    </coverage>
+    
+    <structure>
+      <source>LOMv1.0</source>
+      <value>hierarchical</value>
+    </structure>
+    
+    <aggregationLevel>
+      <source>LOMv1.0</source>
+      <value>1</value>
+    </aggregationLevel>
+    
+  </general>
+  
+  <lifeCycle>
+
+    <version>
+      <string language="es">1.0</string>
+    </version>
+    
+    <status>
+      <source>LOMv1.0</source>
+      <value>final</value>
+    </status>
+
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>publisher</value>
+      </role>
+      <entity>
+        <![CDATA[BEGIN:VCARD
+        VERSION:2.1
+        FN:Marc Corbalán | Pedro Jiménez Castela
+        ORG:Isca Consulting
+        EMAIL;PREF;INTERNET:info@iscaconsulting.com
+        END:VCARD]]>
+      </entity>
+      <date>
+        <dateTime>2020-07-30</dateTime>
+        <description>
+          <string language="es">Isca Consulting</string>
+        </description>
+      </date>
+    </contribute>
+
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>Universidad Camilo José Cela</value>
+      </role>
+      <entity>
+        <![CDATA[BEGIN:VCARD
+        VERSION:2.1
+        ORG:Universidad Camilo José Cela
+        END:VCARD]]>
+      </entity>
+      <date>
+        <dateTime>2020-07-30</dateTime>
+        <description>
+          <string language="es">Universidad Camilo José Cela</string>
+        </description>
+      </date>
+    </contribute>
+    
+  </lifeCycle>
+  
+  <metaMetadata>
+    <identifier>
+      <catalog>URI</catalog>
+      <entry>com.ucjc.isca.scorm</entry>
+    </identifier>
+   
+    <contribute>
+      <role>
+        <source>LOMv1.0</source>
+        <value>creator</value>
+      </role>
+      <entity>
+        <![CDATA[BEGIN:VCARD
+        VERSION:2.1
+        FN:Marc Corbalán | Pedro Jiménez Castela
+        ORG:Isca Consulting
+        EMAIL;PREF;INTERNET:info@iscaconsulting.com
+        END:VCARD]]>
+      </entity>
+      <date>
+        <dateTime>2020-07-30</dateTime>
+        <description>
+          <string language="es">Fecha metadatos scorm</string>
+        </description>
+      </date>
+    </contribute>
+    
+    <metadataSchema>LOMv1.0</metadataSchema>
+    <metadataSchema>SCORM_CAM_v1.3</metadataSchema>
+    
+    <language>es</language>
+  
+  </metaMetadata>
+  
+</lom>

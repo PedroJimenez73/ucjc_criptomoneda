@@ -8,6 +8,47 @@ var processedUnload = false;
 var reachedEnd = false;
 var currentPage = 0;
 
+// function setFullScreen() {
+
+//     if (!Element.prototype.requestFullscreen) {
+//         Element.prototype.requestFullscreen = Element.prototype.mozRequestFullscreen || Element.prototype.webkitRequestFullscreen || Element.prototype.msRequestFullscreen;
+//     }
+
+//     if (!document.exitFullscreen) {
+//         document.exitFullscreen = document.mozExitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+//     }
+
+//     if (!document.fullscreenElement) {
+
+//         Object.defineProperty(document, 'fullscreenElement', {
+//             get: function() {
+//                 return document.mozFullScreenElement || document.msFullscreenElement || document.webkitFullscreenElement;
+//             }
+//         });
+
+//         Object.defineProperty(document, 'fullscreenEnabled', {
+//             get: function() {
+//                 return document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitFullscreenEnabled;
+//             }
+//         });
+//     }
+
+//     document.documentElement.requestFullscreen({ navigationUI: "show" });
+
+// }
+
+// document.documentElement.addEventListener('fullscreenchange', (event) => {
+//     if (document.fullscreenElement) {
+//         console.log(`Element: ${document.fullscreenElement.id} entered fullscreen mode.`);
+//     } else {
+//         toggleMessage();
+//         console.log('Leaving full-screen mode.');
+//     }
+// });
+
+
+
+
 function doStart(){
     
     //record the time that the learner started the SCO so that we can report the total time

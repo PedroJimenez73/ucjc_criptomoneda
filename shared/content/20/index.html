@@ -1,59 +1,294 @@
 <div id="page-container">
     <div class="container">
-        <h2>
-            <span>2.2</span>
-            Antecedentes históricos
-        </h2>
-        <section class="timeline">
-            <article>
-                <div class="item">
-                    <div class="pic" 
-                         style="background-image: url('img/Cripto_4.jpeg');"
-                         onclick="showTimelineContent(1)">
-                        <span style="color: white">1998</span>
-                    </div>
-                </div>
-                <div class="content active">
-                    <p>El antecedente de las criptomonedas lo encontramos, en 1998, en el trabajo del ingeniero informático Wei Dai que establece un sistema descentralizado de tipo cooperativo con una doble funcionalidad:</p>
-                    <ul>
-                        <li>La creación de dinero.</li>
-                        <li>Su intercambio, mediante un sistema de validación de cada operación de intercambio, consistente en la generación de una evidencia de naturaleza criptográfica por cada transacción, análogo al sistema de validación de la firma electrónico.</li>
-                    </ul>
-                    <p>La propuesta de Wei se asentaba en dos <b>elementos básicos</b>:</p>
-                    <ul>
-                        <li>La <b>creación de una comunidad económica</b> en la que todos los miembros podían crear dinero, mediante la validación de las transacciones efectuadas por el resto de miembros (lo que hoy conocemos como minería). Cualquiera de los miembros podría realizar operaciones de intercambio.</li>
-                        <li>El <b>sistema es transparente</b>. Todos los miembros de la comunidad tienen acceso a las operaciones realizadas en el sistema por el resto de miembros de tal manera que no existen defectos de información.</li>
-                    </ul>
-                </div>
-            </article>
-            <article>
-                <div class="item">
-                    <div class="pic" 
-                         style="background-image: url('img/Cripto_5.jpg');"
-                         onclick="showTimelineContent(2)">
-                        <span style="color: white">2009</span>
-                    </div>
-                </div>
-                <div class="content">
-                    <p>
-                        Sobre este trabajo, y bajo el seudónimo Satoshi Nakamoto, el 3 de enero de 2009 se crea una red <i>peer to peer</i>, que materializa la idea de Wei, y que implementa la doble funcionalidad de creación de dinero, <i>Bitcoin</i>, y soporte y validación de su intercambio. El sistema funciona como un libro de registro de contabilidad, recogiendo de manera ininterrumpida las operaciones realizadas.
-                    </p>
-                </div>
-            </article>
-        </section>
+        <h1>
+            Actividad práctica
+        </h1>
+        <p><b>¿Sabes con qué norma jurídica tienen relación los siguientes artículos de la constitución?</b></p>
+        <p>Puedes utilizar el siguiente enlace para consultar la Constitución Española y relacionar cada norma jurídica con su artículo. Tienes tres oportunidades antes de ver las soluciones.</p>
+        <div class="cita">
+            <p>
+                <img src="img/icons/link.svg">
+            </p>
+            <div class="links">
+                <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229" target="_blank">https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229</a>
+            </div>
+        </div>
+        <p class="instructions">
+            Asocia cada elemento de la izquierda con el de la derecha pulsando sucesivamente en cada uno. Tras asociarlos todos pulsa en el botón Comprobar (dispones de tres intentos).
+        </p>
+        <div class="touch-panel" id="touch-panel">
+            <div class="row">
+                <p id="a">ARTÍCULO 90 C.E.</p>
+                <p id="tres">LEYES ORGÁNICAS</p>
+            </div>
+            <div class="row">
+                <p id="b">ARTÍCULO 97 C.E.</p>
+                <p id="uno">LEYES ORDINARIAS</p>
+            </div>
+            <div class="row">
+                <p id="c">ARTÍCULO 81 C.E.</p>
+                <p id="dos">REGLAMENTOS</p>
+            </div>
+            <div class="row">
+                <p id="d">ARTÍCULOS 81 a 85 C.E.</p>
+                <p id="cinco">DECRETO LEY</p>
+            </div>
+            <div class="row">
+                <p id="e">ARTÍCULO 86 C.E.</p>
+                <p id="cuatro">DECRETOS LEGISLATIVOS</p>
+            </div>
+        </div>
+         <div class="touch-panel" id="touch-panel-results">
+            <div class="row">
+                <p class="red" id="a">ARTÍCULO 90 C.E.</p>
+                <p class="red" id="uno">LEYES ORDINARIAS</p>
+                
+            </div>
+            <div class="row">
+                <p class="green" id="b">ARTÍCULO 97 C.E.</p>
+                <p class="green" id="dos">REGLAMENTOS</p>
+            </div>
+            <div class="row">
+                <p class="blue" id="c">ARTÍCULO 81 C.E.</p>
+                <p class="blue" id="tres">LEYES ORGÁNICAS</p>
+            </div>
+            <div class="row">
+                <p class="brown" id="d">ARTÍCULOS 81 a 85 C.E.</p>
+                <p class="brown" id="cuatro">DECRETOS LEGISLATIVOS</p>
+            </div>
+            <div class="row">
+                <p class="yellow" id="e">ARTÍCULO 86 C.E.</p>
+                <p class="yellow" id="cinco">DECRETO LEY</p>
+            </div>
+        </div>
+        <div class="touch-buttons">
+            <button id="check" onclick="checkBoxes()">Comprobar</button>
+            <button id="reset" onclick="reset()" class="outline" onclick="reset()">Reintentar</button>
+            <p id="incorrect">
+                No es correcto, inténtalo de nuevo por favor.
+            </p>
+            <p id="correct">
+                Correcto, contínua a la siguiente pantalla.
+            </p>
+            <p id="incomplete">
+                Por favor asocia todos los elementos para poder comprobar
+            </p>
+            <p id="final">
+                Lo sentimos no acertaste. Observa los resultados correctos y continua a la siguiente pantalla.
+            </p>
+        </div>
     </div>
 </div>
 <script>
-    var contents = document.querySelectorAll('.content');
+    var boxColorsLeft = ["red","green","blue","brown","yellow"];
+    var boxColorsRight = ["red","green","blue","brown","yellow"];
+    var counterColorLeft = 0;
+    var counterColorRight = 0;
+    var resultsBox = [
+        {left: null, right: null},
+        {left: null, right: null},
+        {left: null, right: null},
+        {left: null, right: null},
+        {left: null, right: null}
+    ]
+    var resultsCorrectsBox = [
+        {left: 'a', right: 'uno'},
+        {left: 'b', right: 'dos'},
+        {left: 'c', right: 'tres'},
+        {left: 'd', right: 'cuatro'},
+        {left: 'e', right: 'cinco'}
+    ]
+    var aChecked = false;
+    var bChecked = false;
+    var cChecked = false;
+    var dChecked = false;
+    var eChecked = false;
+    var unoChecked = false;
+    var dosChecked = false;
+    var tresChecked = false;
+    var cuatroChecked = false;
+    var cincoChecked = false;
 
-    function showTimelineContent(e) {
-        e--;
-        for(i = 0; i < contents.length; i++) {
-            if(i === e) {
-                contents[i].classList.add('active');
-            } else {
-                contents[i].classList.remove('active');
-            }
+    var resetBtn = document.getElementById('reset');
+    resetBtn.style.display = 'none';
+    var checkBtn = document.getElementById('check');
+    var correct = document.getElementById('correct');
+    var incorrect = document.getElementById('incorrect');
+    var incomplete = document.getElementById('incomplete');
+    var touchPanelResults = document.getElementById('touch-panel-results');
+    touchPanelResults.style.display = 'none';
+    var touchPanel = document.getElementById('touch-panel')
+    var final = document.getElementById('final');
+    var lockButton = 0;
+    var intent = 2;
+
+    $('#a').click(function() {
+        if(counterColorLeft < 5 && !aChecked) {
+            aChecked = true;
+            $('#a').addClass(boxColorsLeft[counterColorLeft]);
+            resultsBox[counterColorLeft].left = $('#a').attr('id');
+            counterColorLeft++;
+            lockButton++;
         }
+    })
+    $('#b').click(function() {
+        if(counterColorLeft < 5 && !bChecked) {
+            bChecked = true;
+            $('#b').addClass(boxColorsLeft[counterColorLeft]);
+            resultsBox[counterColorLeft].left = $('#b').attr('id');
+            counterColorLeft++;
+            lockButton++;
+        }
+    })
+    $('#c').click(function() {
+        if(counterColorLeft < 5 && !cChecked) {
+            cChecked = true;
+            $('#c').addClass(boxColorsLeft[counterColorLeft]);
+            resultsBox[counterColorLeft].left = $('#c').attr('id');
+            counterColorLeft++;
+            lockButton++;
+        }
+    })
+    $('#d').click(function() {
+        if(counterColorLeft < 5 && !dChecked) {
+            dChecked = true;
+            $('#d').addClass(boxColorsLeft[counterColorLeft]);
+            resultsBox[counterColorLeft].left = $('#d').attr('id');
+            counterColorLeft++;
+            lockButton++;
+        }
+    })
+    $('#e').click(function() {
+        if(counterColorLeft < 5 && !eChecked) {
+            eChecked = true;
+            $('#e').addClass(boxColorsLeft[counterColorLeft]);
+            resultsBox[counterColorLeft].left = $('#e').attr('id');
+            counterColorLeft++;
+            lockButton++;
+        }
+    })
+
+    $('#uno').click(function() {
+        if(counterColorRight < 5 && !unoChecked) {
+            unoChecked = true;
+            $('#uno').addClass(boxColorsRight[counterColorRight]);
+            resultsBox[counterColorRight].right = $('#uno').attr('id');
+            counterColorRight++;
+            lockButton++;
+        }
+    })
+    $('#dos').click(function() {
+        if(counterColorRight < 5 && !dosChecked) {
+            dosChecked = true;
+            $('#dos').addClass(boxColorsRight[counterColorRight]);
+            resultsBox[counterColorRight].right = $('#dos').attr('id');
+            counterColorRight++;
+            lockButton++;
+        }
+    })
+    $('#tres').click(function() {
+        if(counterColorRight < 5 && !tresChecked) {
+            tresChecked = true;
+            $('#tres').addClass(boxColorsRight[counterColorRight]);
+            resultsBox[counterColorRight].right = $('#tres').attr('id');
+            counterColorRight++;
+            lockButton++;
+        }
+    })
+    $('#cuatro').click(function() {
+        if(counterColorRight < 5 && !cuatroChecked) {
+            cuatroChecked = true;
+            $('#cuatro').addClass(boxColorsRight[counterColorRight]);
+            resultsBox[counterColorRight].right = $('#cuatro').attr('id');
+            counterColorRight++;
+            lockButton++;
+        }
+    })
+    $('#cinco').click(function() {
+        if(counterColorRight < 5 && !cincoChecked) {
+            cincoChecked = true;
+            $('#cinco').addClass(boxColorsRight[counterColorRight]);
+            resultsBox[counterColorRight].right = $('#cinco').attr('id');
+            counterColorRight++;
+            lockButton++;
+        }
+    })
+
+    function compare( a, b ) {
+        if ( a.left > b.left ){
+            return 1;
+        }
+        if ( a.left < b.left ){
+            return -1;
+        }
+        return 0;
+    }
+
+    function checkBoxes() {
+        if (lockButton === 10) {
+            if(intent > 0) {
+                incomplete.style.display = "none";
+                resultsBox.sort(compare);
+                if(JSON.stringify(resultsCorrectsBox)  === JSON.stringify(resultsBox)) {
+                    correct.style.display = "block";
+                    incorrect.style.display = "none";
+                    resetBtn.style.display = 'none';
+                    checkBtn.style.display = 'none';
+                } else {
+                    incorrect.style.display = "block";
+                    correct.style.display = "none";
+                    resetBtn.style.display = 'block';
+                    checkBtn.style.display = 'none';
+                }
+            } else {
+                incorrect.style.display = "none";
+                correct.style.display = "none";
+                resetBtn.style.display = 'none';
+                checkBtn.style.display = 'none';
+                final.style.display = 'block';
+                touchPanelResults.style.display = "block";
+                touchPanel.style.display = "none";
+            }
+        } else {
+            incomplete.style.display = "block";
+        }
+    }
+
+    function reset() {
+        intent--;
+        incomplete.style.display = "none";
+        incorrect.style.display = "none";
+        resetBtn.style.display = 'none';
+        checkBtn.style.display = 'block';
+        lockButton = 0;
+        counterColorLeft = 0;
+        counterColorRight = 0;
+        resultsBox = [
+            {left: null, right: null},
+            {left: null, right: null},
+            {left: null, right: null},
+            {left: null, right: null},
+            {left: null, right: null}
+        ]
+        aChecked = false;
+        bChecked = false;
+        cChecked = false;
+        dChecked = false;
+        eChecked = false;
+        unoChecked = false;
+        dosChecked = false;
+        tresChecked = false;
+        cuatroChecked = false;
+        cincoChecked = false;
+        $("#a").removeClass();
+        $("#b").removeClass();
+        $("#c").removeClass();
+        $("#d").removeClass();
+        $("#e").removeClass();
+        $("#uno").removeClass();
+        $("#dos").removeClass();
+        $("#tres").removeClass();
+        $("#cuatro").removeClass();
+        $("#cinco").removeClass();
     }
 </script>

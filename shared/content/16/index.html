@@ -1,22 +1,77 @@
 <div id="page-container">
     <div class="container">
-        <h3>1.1.4.	BC y el Derecho al olvido</h3>
-        <p class="super-text">
-            Una de las características fundamentales de BC es su inmutabilidad e inalterabilidad: una vez que se valida la creación de un bloque se produce un sellado que impide que los datos puedan ser alterados o borrados. Más allá de la dificultad técnica de eliminar o modificar un bloque, lo cual supondría destruir la cadena, la propia esencia de BC quedaría alterada.
-        </p>
-        <p>El problema podría darse respecto de esta inalterabilidad cuando la información subida a BC contenga datos de carácter personal entendida esta como:</p>
-        <div class="cita">
-            <p>
-                <img src="img/icons/quote.svg">
-            </p>
-            <p class="quote">Cualquier información numérica, alfabética, gráfica, fotográfica, acústica o de cualquier otro tipo concerniente a personas físicas identificadas o identificables.</p>
+        <h1>Los Reglamentos</h1>
+        <p>Son las normas jurídicas propias del Gobierno y de la Administración Pública. Por tanto, no puede ser definida como la expresión popular. Por tanto, están subordinadas a las normas con valor de ley, a las leyes y a la Constitución.</p>
+        <div class="super-text">
+            <p>Un Reglamento es el resultado del principio de autonomía que la Constitución reconoce a las Administraciones Públicas.</p>
         </div>
-        <p>Considerando que Persona identificable es:</p>
-        <div class="cita">
-            <p>
-                <img src="img/icons/quote.svg">
-            </p>
-            <p class="quote">Toda persona cuya identidad pueda determinarse, directa o indirectamente, mediante cualquier información referida a su identidad física, fisiológica, psíquica, económica, cultural o social. Una persona física no se considerará identificable si dicha identificación requiere plazos o actividades desproporcionados.</p>
+        <p>El art. 97 de la C.E. recoge “El Gobierno dirige la política interior y exterior, la Administración civil y militar y la defensa del Estado. Ejerce la función ejecutiva y la potestad reglamentaria de acuerdo con la Constitución y las leyes”</p>
+        <p class="instructions">Pulse sobre las imágenes para ampliar la información.</p>
+        <div id="flexy-not-ie" class="flexy">
+            <div class="flip-card" onclick="flip(1)">
+                <div class="front-card">
+                    <img src="img/CRIMI1_s1_im4.jpg">
+                    <p class="orange-text">
+                        Jerarquía Normativa entre los Reglamentos
+                    </p>
+                </div>
+                <div class="back-card">
+                    <p>
+                        Aparte de la subordinación de los Reglamentos a las leyes, normas con rango de ley y a la Constitución, los Reglamentos también están ordenados en escalera conforme a un principio de jerarquía que refleja la autoridad u órgano que lo aprueba.
+                    </p>
+                </div>
+            </div>                               
+        </div>
+        <div id="flexy-ie" class="flexy">
+            <div class="ie-card" onclick="flipIE(1)">
+                <div class="ie-front-card">
+                    <img src="img/CRIMI1_s1_im4.jpg">
+                    <p class="orange-text">
+                        Jerarquía Normativa entre los Reglamentos
+                    </p>
+                </div>
+                <div class="ie-back-card">
+                    <p>
+                        Aparte de la subordinación de los Reglamentos a las leyes, normas con rango de ley y a la Constitución, los Reglamentos también están ordenados en escalera conforme a un principio de jerarquía que refleja la autoridad u órgano que lo aprueba.
+                    </p>             
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    // Opera 8.0+
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+    // Firefox 1.0+
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+
+    // Safari 3.0+ "[object HTMLElementConstructor]" 
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+
+    // Chrome 1+
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+    // Blink engine detection
+    var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+    if (isIE) {
+        document.getElementById('flexy-not-ie').style.display = "none";
+    } else {
+        document.getElementById('flexy-ie').style.display = "none";
+    }
+    function flip(e) {
+        e--
+        $(".flip-card").eq(e).toggleClass('turn');
+    }
+    function flipIE(e) {
+        e--
+        $(".ie-card").eq(e).toggleClass('show');
+    }
+</script>

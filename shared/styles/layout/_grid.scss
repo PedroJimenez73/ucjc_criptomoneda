@@ -57,22 +57,23 @@
         font-size: 1.2rem;
         line-height: 1.5;
 
-        .glosary {
-            color: $interactive;
-            transition: 400ms all ease-in-out;
+    }
+    
+    .glosary {
+        color: $interactive;
+        transition: 400ms all ease-in-out;
 
-            &:after {
-                content: url('../img/icons/eye.svg');
-                position: relative;
-                top: 6px;
-                left: 5px;
-                margin-right: 8px;
-            }
+        &:after {
+            content: url('../img/icons/eye.svg');
+            position: relative;
+            top: 6px;
+            left: 5px;
+            margin-right: 8px;
+        }
 
-            &:hover {
-                cursor: pointer;
-                text-decoration: underline;
-            }
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
         }
     }
 }

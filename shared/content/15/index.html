@@ -1,68 +1,20 @@
 <div id="page-container">
     <div class="container">
-        <p><b>Características del BC:</b></p>
-        <div class="tab">
-            <div class="tabs">
-                <div class="check" onclick="toggleTab(1)">
-                    <p>Tracto sucesivo</p>
-                </div>
-                <div onclick="toggleTab(2)">
-                    <p>Sellado de tiempo no cualificado</p>
-                </div>
-            </div>
-            <div class="content-tabs">
-                <div class="show visible" style="z-index: 10;">
-                    <p>
-                        Tal y como se ha podido ver en este curso las transacciones en BC generan un <i>hash</i> que sirve para enlazar el nuevo bloque creado para la nueva transacción con el bloque anterior, quedando así vinculado a toda la cadena de forma inequívoca equiparable así a lo que jurídicamente se denomina tracto sucesivo, es decir la situación que permite trazar de forma cierta y sucesiva los antecedentes de determinados actos o transacciones. En estos casos el <i>Hash</i> operaría como metadato, es decir, como elemento que proporcionaría información sobre la operación o transacción en BC. Existe ya algún precedente jurisprudencial en Estado Unidos; Lorraine vs.Markel American Corporation, en el que se acepta el valor probatorio del <i>hash</i> como elemento que aporta información fiable sobre operaciones o transacciones en BC.
-                    </p>
-                </div>
-                <div class="show">
-                    <p>Sin embargo, también es necesario señalar, respecto de su robustez probatoria, que BC ofrece un sellado de tiempo no cualificado. El Art 41 del Reglamento Europeo de Firma Electrónica establece la distinción entre sellos de tiempo cualificados y no cualificados. Básicamente los sellados de tiempo cualificados son aquellos verificados por un Prestador de Servicios de Confianza y en estos casos gozará de presunción de exactitud de la fecha y hora, acreditando por si solo tanto el momento exacto desde el cual el registro permanece inalterado como también el propio contenido del registro. En el caso de BC no ofrece un sellado cualificado, ello significa que en un proceso judicial habrá que acreditar que el hash garantiza la inalterabilidad del registro, mediante la correspondiente prueba pericial, en este caso criptográfica, es decir habrá que respaldar mediante un informe pericial la robustez de la prueba.</p>
-                </div>
-            </div>
-        </div>
+        <h1>
+            Decretos Legislativos
+        </h1>
+        <p>Las Cortes Generales podrán delegar en el Gobierno la potestad de dictar normas con rango de ley sobre materias determinadas no incluidas en la llamada reserva de ley, prevista como sabemos a las leyes orgánicas.</p>
+        <p>La delegación legislativa puede concederse mediante una<b> Ley de Bases, </b>cuya diferencia con una ley es que no tiene artículos sino bases, esto es, parámetros y objetivos a los cuales debe someterse el Gobierno, dando lugar a un Decreto Legislativo que se llama <b>Textos Articulados.</b></p>
+        <p>Cuando esa delegación legislativa se produce por medio de una simple <b>Ley Ordinaria </b>para que el Gobierno conozca el alcance, contenidos, fechas, plazos y demás detalles. En este supuesto el resultado es también un Decreto Legislativo que se llama <b>Texto Refundido</b>, que consiste es fusionar varios textos legales en uno solo<b>.</b></p>
+        <p>La C.E. nos informa:</p>
+        <ol>
+            <li class="fade-uno">Que la delegación legislativa habrá de otorgarse al Gobierno de forma expresa para materia concreta y con fijación del plazo para su ejercicio.</li>
+            <li class="fade-dos">Que la delegación se agota por el uso que de ella haga el Gobierno mediante la publicación de la norma correspondiente.</li>
+            <li class="fade-tres">Que no podrá entenderse concedida de modo implícito o por tiempo indeterminado.</li>
+            <li class="fade-cuatro">Que tampoco podrá permitir la subdelegación a autoridades distintas del propio Gobierno.</li>
+            <li class="fade-cinco">Que las leyes de bases delimitarán con precisión el objeto y alcance de la delegación legislativa y los principios y criterios que han de seguirse en su ejercicio.</li>
+            <li class="fade-seis">Que la autorización para refundir textos legales determinará el ámbito normativo a que se refiere el contenido de la delegación, especificando si se circunscribe a la mera formulación de un texto único o si se incluye la de regularizar, aclarar y armonizar los textos legales que han de ser refundidos.</li>
+            <li class="fade-siete">Que, sin perjuicio de la competencia propia de los Tribunales, las leyes de delegación podrán establecer en cada caso fórmulas adicionales de control.</li>
+        </ol>
     </div>
 </div>
-<script>
-    var tab = document.querySelector('.tab');
-    var tabs = document.querySelectorAll('.tabs div');
-    var contents = document.querySelectorAll('.content-tabs .show');
-    var body = document.querySelector('body');
-
-    var maxHeightContent = 0;
-    var tabsHeigth = 0;
-
-    if(window.innerWidth > 440) {
-        for (i = 0; i < contents.length; i++) {
-            if(contents[i].offsetHeight > maxHeightContent) {
-                maxHeightContent = contents[i].offsetHeight;
-            }
-        }
-
-        tab.style.height = maxHeightContent + 40 + 'px';
-
-        for (j = 0; j < tabs.length; j++) {
-            tabs[j].style.height = (maxHeightContent + 40) / tabs.length + 'px';
-        }
-    } else {
-        for (i = 0; i < tabs.length; i++) {
-            maxHeightContent += tabs[i].offsetHeight;
-        }
-
-        tab.style.height = maxHeightContent + 'px';
-    }
-
-    function toggleTab(e) {
-        e--;
-        for (k = 0; k < tabs.length; k++) {
-            if (e !== k) {
-                tabs[k].classList.remove('check');
-                contents[k].classList.remove('visible');
-            } else {
-                tabs[k].classList.add('check');
-                contents[k].classList.add('visible');
-            }
-        }
-    }
-
-</script>

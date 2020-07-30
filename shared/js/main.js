@@ -2,32 +2,29 @@ var pages = [
     { title: "Portada", path: "01", show: "no"},
     { title: "Presentación", path: "02", show: "yes"},
     { title: "Mapa Conceptual", path: "03", show: "yes"},
-    { title: "Criptomonedas y Blockchain: Conceptos y aspectos jurídicos", path: "04", show: "yes"},
+    { title: "Puesta en situación", path: "04", show: "yes"},
     { title: "", path: "05", show: "no"},
-    { title: "", path: "06", show: "no"},
-    { title: "1. ¿Qué es el blockchain?", path: "07", show: "yes"},
-    { title: "", path: "08", show: "no"},
-    { title: "", path: "09", show: "no"},
-    { title: "", path: "10", show: "no"},
-    { title: "", path: "11", show: "no"},
-    { title: "", path: "12", show: "no"},
-    { title: "", path: "13", show: "no"},
-    { title: "", path: "14", show: "no"},
-    { title: "", path: "15", show: "no"},
-    { title: "", path: "16", show: "no"},
-    { title: "", path: "17", show: "no"},
-    { title: "", path: "18", show: "no"},
-    { title: "2. La criptomoneda como bien económico: concepto y análisis jurídico", path: "19", show: "yes"},
-    { title: "", path: "20", show: "no"},
-    { title: "", path: "21", show: "no"},
-    { title: "", path: "22", show: "no"},
-    { title: "", path: "23", show: "no"},
-    { title: "", path: "24", show: "no"},
-    { title: "", path: "25", show: "no"},
-    { title: "Glosario", path: "26", show: "yes"},
-    { title: "Bibliografía", path: "27", show: "yes"},
-    { title: "Enlaces de interés", path: "28", show: "yes"},
-    { title: "Créditos", path: "29", show: "yes"},
+    { title: "Concepto", path: "06", show: "yes"},
+    { title: "Información de interés", path: "07", show: "yes"},
+    { title: "Historia", path: "08", show: "yes"},
+    { title: "Características del principio de jerarquía normativa (art. 9.3 C.E.)", path: "09", show: "yes"},
+    { title: "Normas que integran esa escala jerárquica", path: "10", show: "yes"},
+    { title: "Tratados Internacionales y el Derecho de la Unión Europea", path: "11", show: "yes"},
+    { title: "La Ley", path: "12", show: "yes"},
+    { title: "Normas con valor de Ley", path: "13", show: "yes"},
+    { title: "Decreto Ley", path: "14", show: "yes"},
+    { title: "Decretos Legislativos", path: "15", show: "yes"},
+    { title: "Los Reglamentos", path: "16", show: "yes"},
+    { title: "Reales Decretos", path: "17", show: "yes"},
+    { title: "Disposiciones normativas de la Comisión Delegada", path: "18", show: "yes"},
+    { title: "Órdenes Ministeriales", path: "19", show: "yes"},
+    { title: "Actividad práctica", path: "20", show: "yes"},
+    { title: "Relaciones entre la ley y el reglamento", path: "21", show: "yes"},
+    { title: "Principios", path: "22", show: "yes"},
+    { title: "Enlaces de interés", path: "23", show: "yes"},
+    { title: "Glosario", path: "24", show: "yes"},
+    { title: "Bibliografía", path: "25", show: "yes"},
+    { title: "Créditos", path: "26", show: "yes"},
 ]
 
 var menuItems = document.getElementById('menu-items');
@@ -67,7 +64,6 @@ for (i = 0; i < pages.length; i++) {
     }
 }
 
-
 $(document).ready(function(){
 
     $("#content").empty();
@@ -75,13 +71,12 @@ $(document).ready(function(){
     $("#page-container").fadeIn('slow');												  
     });
 
-    $('#burger').click(() => {
+    $('#burger').click(function () {
         $('#burger').toggleClass('open');
         $('#menu').toggleClass('open');
     });
 
 })
-
 
 function prev() {
     currentPage--;
@@ -140,13 +135,14 @@ function toggleTip(e) {
     setTimeout(function(){
         $(".modal").eq(e).toggleClass("visible");
         $("#overlay").toggleClass("visible");
+        window.scrollTo(0, 0);
     }, 20);
 }
 
 function toggleAccordion(e) {
     e--;
     $('article').eq(e).css('pointer-events','none');
-    setTimeout(() => {
+    setTimeout(function () {
         $('article').eq(e).css('pointer-events','auto');
     }, 700);
     for (i = 0; i < $('article').length; i++) {
